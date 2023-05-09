@@ -1,13 +1,20 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import RootLayout from './pages/RootLayout';
+import ErrorPage from './pages/Error';
+import HomePage from './pages/Home';
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const router = createBrowserRouter([]);
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <RootLayout />,
+			errorElement: <ErrorPage />,
+			children: [{ index: true, element: <HomePage /> }],
+		},
+	]);
 
-  return <RouterProvider router={router} /> 
+	return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
