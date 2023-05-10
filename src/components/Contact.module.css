@@ -1,0 +1,46 @@
+.contact {
+    
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 4em 2em;
+	
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.598)), url('src/assets/restaurant.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.contact-box {
+   	padding: 60px 0;
+	color: var(--color-light-gold);
+	border: 3px solid;
+	text-decoration: none;
+
+    
+}
+
+.title{
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+    
+}
+
+.contact-item{
+    white-space: nowrap;
+    padding-top: 2rem;
+    font-size: 2rem;
+    
+}
+
+
+.contact-item-text{
+    padding-left: 10px;
+}
+
+.address{
+    padding-top: 4rem;
+    line-height: 34px;
+    
+}

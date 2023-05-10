@@ -10,9 +10,14 @@ function App() {
 			path: '/',
 			element: <RootLayout />,
 			errorElement: <ErrorPage />,
-			children: [{ index: true, element: <HomePage /> }],
+			children: [{ index: true, element: <HomePage /> },
+			{
+				path: 'menu',
+				element: <Menu/>,
+				children: [
+				],
 		},
-	]);
+	]}]);
 
 	return <RouterProvider router={router} />;
 }

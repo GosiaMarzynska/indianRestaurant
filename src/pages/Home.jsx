@@ -1,14 +1,16 @@
-import About from "../components/About"
-import Footer from "../components/Footer"
-import Logo from "../components/Logo"
-import MenuSection from "../components/MenuSection"
-import PageContent from "../components/PageGontent"
+import About from '../components/About';
+import HeaderMain from '../components/HeaderMain';
+import MenuSection from '../components/MenuSection';
+import PageContent from '../components/PageGontent';
+import Reservation from '../components/ReservationSection';
 
 export default function HomePage() {
-    return <PageContent>
-        <Logo/>
-        <About/>
-        <MenuSection/>
-        
-        </PageContent>
+	return (
+		<PageContent>
+			<HeaderMain />
+			<About />
+			<MenuSection />
+            <Reservation/>
+		</PageContent>
+	);
 }

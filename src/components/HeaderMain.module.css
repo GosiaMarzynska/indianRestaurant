@@ -1,0 +1,51 @@
+.background {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background: linear-gradient(90deg, var(--color-first) 0%, var(--color-second) 100%);
+}
+
+.subpage{
+	height: 50vh;
+}
+.logo {
+	position: absolute;
+	width: 80%;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+}
+.hidden-title {
+	width: 1px;
+	font-size: 1px;
+}
+.phone {
+	position: absolute;
+	bottom: 120px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-shadow: 3px 3px 5px #111;
+	font-size: 23px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: var(--color-gold);
+	white-space: nowrap;
+}
+.arrow {
+	position: absolute;
+	bottom: 30px;
+	font-size: 3.6rem;
+	color: var(--color-gold-dark);
+	transform: translateX(-50%);
+	transition: all 0.3s;
+	text-decoration: none;
+	text-shadow: 3px 3px 5px #111;
+	opacity: 0.8;
+}
+
+.arrow:active,
+.arrow:hover {
+	color: var(--color-gold);
+	text-shadow: 2px 2px 5px #111;
+	opacity: 1;
+}

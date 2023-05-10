@@ -1,12 +1,18 @@
 import classes from './Footer.module.css';
 
 export default function Footer() {
+	const handleCurrentYear = () => new Date().getFullYear();
+
 	return (
 		<footer className={classes.footer}>
 			<div className={classes.wrapper}>
 				<div className={classes.boxes}>
 					<div className={classes.box}>
-						<img className={classes['box-logo']} src='/dist/img/logo-pure-small.png' alt='logo restauracji Namate' />
+						<img
+							className={classes['box-logo']}
+							src='src\assets\logo\logo-namaste-text.png'
+							alt='logo restauracji Namate'
+						/>
 						<p className={classes['box-text']}>
 							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorum odit officiis nulla ipsum magnam
 							soluta maiores facilis magni accusantium!
@@ -23,7 +29,7 @@ export default function Footer() {
 							</a>
 						</div>
 					</div>
-					<div className={classes['box box-desktop']}>
+					<div className={`${classes.box} ${classes['box-desktop']}`}>
 						<h3 className={classes['box-title']}>O nas</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
@@ -37,7 +43,7 @@ export default function Footer() {
 							</li>
 						</ul>
 					</div>
-					<div className={classes['box box-desktop']}>
+					<div className={`${classes.box} ${classes['box-desktop']}`}>
 						<h3 className={classes['box-title']}>Nasza Firma</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
@@ -52,7 +58,7 @@ export default function Footer() {
 						</ul>
 					</div>
 
-					<div className={classes['box box-desktop']}>
+					<div className={`${classes.box} ${classes['box-desktop']}`}>
 						<h3 className={classes['box-title']}>Dokumenty</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
@@ -68,7 +74,7 @@ export default function Footer() {
 
 			<hr />
 			<p className={classes['bottom-text']}>
-				&copy; <span className={classes.year}></span> Namaste Indian Restaurant
+				{handleCurrentYear()} &copy; <span className={classes.year}></span> Namaste Indian Restaurant
 			</p>
 		</footer>
 	);

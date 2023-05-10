@@ -2,18 +2,19 @@
     position: relative;
     padding: 6rem 3rem; 
 	width: 100%;
-	background: var(--color-light-gold);
+	background: url(/src/assets/background-pattern.png);
     text-align: center;
-    color: var(--color-second);
+    color: var(--color-main);
 }
 
 .title {
     text-transform: uppercase;
-    color: var(--color-first);
+    color: var(--color-main);
 
 }
 
 .text {
     padding-top: 30px;
     text-align: justify;
+    line-height: 24px;
 }
