@@ -1,0 +1,71 @@
+.footer {
+	position: relative;
+}
+.wrapper {
+	padding: 6em 2em 2em;
+}
+
+.box {
+	font-size: 1.4rem;
+}
+
+.box-desktop {
+	display: none;
+}
+
+.box-logo {
+	margin-bottom: 1em;
+	width: 60%;
+	text-transform: uppercase;
+}
+
+.box-social {
+	text-align: center;
+	margin: 2em 0 1em;
+}
+
+.box-link {
+	padding: 0 0.3em;
+	font-size: 3.6rem;
+	color: gray;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+.box-link:first-child {
+	padding-left: 0;
+}
+
+.box-link:hover {
+	color: darkslategray;
+}
+
+.bottom-text {
+	padding: 2em;
+	text-align: center;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.list {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	line-height: 180%;
+
+	list-style: none;
+	font-size: 2.5rem;
+}
+
+.info-item-link {
+	color: darkgray;
+	transition: text-decoration 0.3s;
+	text-decoration: none lightgrey;
+}
+
+.info-item:hover {
+	color: darkgray;
+	text-decoration: underline var(--color-second);
+}

@@ -1,5 +1,4 @@
 
-
 *,
 *::before,
 *::after {
@@ -15,6 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   --color-gold: #E1C373;
+  --color-light-gold: #f3e8cd;
+  --color-first: rgb(18, 3, 39);
+  --color-second: rgb(109, 66, 55)
 
 
 
@@ -31,4 +33,7 @@ body {
 	background-color: white;
 }
 
+a {
+  text-decoration: none;
+}
 

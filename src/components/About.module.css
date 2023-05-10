@@ -1,0 +1,19 @@
+.about{
+    position: relative;
+    padding: 6rem 3rem; 
+	width: 100%;
+	background: var(--color-light-gold);
+    text-align: center;
+    color: var(--color-second);
+}
+
+.title {
+    text-transform: uppercase;
+    color: var(--color-first);
+
+}
+
+.text {
+    padding-top: 30px;
+    text-align: justify;
+}
