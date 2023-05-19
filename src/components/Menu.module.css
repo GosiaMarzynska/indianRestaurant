@@ -1,0 +1,37 @@
+.menu{
+    position: relative;
+    padding: 7rem 0; 
+	width: 100%;
+	background: url(/src/assets/background-pattern.png);
+    text-align: center;
+    color: var(--color-main);
+}
+.title{
+    padding: 3rem 0 4rem;
+    font-size: 2.8rem;
+}
+
+.menu-items {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.category-button{
+    width: 80%;
+    padding: 2rem;
+    background: none;
+    color: var(--color-main);
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border: none;
+    border-bottom: solid 1px #bbb
+
+}
+
+.category-button:hover{
+    color: #000;
+}

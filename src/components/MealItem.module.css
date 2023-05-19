@@ -1,0 +1,40 @@
+.meal-item {
+	position: relative;
+    
+	width: 80%;
+    padding: 1rem;
+	display: flex;
+    left: 10%;
+	justify-items: center;
+	color: var(--color-main);
+	opacity: 0.85;
+	transition: all 0.3s;
+}
+
+.meal-item:hover {
+	opacity: 1;
+	cursor: pointer;
+	background-color: rgba(197, 197, 197, 0.2);
+}
+
+.img {
+	width: 80px;
+	height: 80px;
+}
+
+.text {
+	padding: 1rem;
+	margin-left: 1rem;
+	text-align: left;
+}
+
+.name {
+    padding-bottom: 1rem;
+	font-size: 2rem;
+}
+
+.price {
+	font-size: 2rem;
+	font-weight: 600;
+	bottom: 1rem
+}
