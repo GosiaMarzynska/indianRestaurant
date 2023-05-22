@@ -1,6 +1,6 @@
 .background {
 	position: relative;
-	height: 40vh;
+	height: 50vh;
 	width: 100%;
 	background: linear-gradient(90deg, var(--color-first) 0%, var(--color-second) 100%);
 }

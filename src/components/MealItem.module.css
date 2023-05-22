@@ -1,10 +1,10 @@
 .meal-item {
 	position: relative;
-    
 	width: 80%;
-    padding: 1rem;
+	padding: 1rem;
 	display: flex;
-    left: 10%;
+	flex-direction: column;
+	left: 10%;
 	justify-items: center;
 	color: var(--color-main);
 	opacity: 0.85;
@@ -14,9 +14,17 @@
 .meal-item:hover {
 	opacity: 1;
 	cursor: pointer;
-	background-color: rgba(197, 197, 197, 0.2);
+	background-color: rgba(197, 197, 197, 0.4);
 }
 
+.active {
+	opacity: 1;
+	background-color: rgba(197, 197, 197, 0.6);
+}
+.basic {
+	display: flex;
+	flex-direction: row;
+}
 .img {
 	width: 80px;
 	height: 80px;
@@ -29,12 +37,12 @@
 }
 
 .name {
-    padding-bottom: 1rem;
+	padding-bottom: 1rem;
 	font-size: 2rem;
 }
 
 .price {
 	font-size: 2rem;
 	font-weight: 600;
-	bottom: 1rem
+	bottom: 1rem;
 }
