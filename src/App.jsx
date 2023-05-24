@@ -3,6 +3,7 @@ import RootLayout from './pages/RootLayout';
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import MenuPage from './pages/MenuPage';
+import ReservationPage from './pages/ReservationPage';
 
 function App() {
 	const router = createBrowserRouter([
@@ -15,6 +16,10 @@ function App() {
 				{
 					path: 'menu',
 					element: <MenuPage />,
+				},
+				{
+					path: 'rezerwacje',
+					element: <ReservationPage />,
 				},
 			],
 		},

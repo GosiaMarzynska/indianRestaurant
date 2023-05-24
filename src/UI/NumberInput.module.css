@@ -1,32 +1,39 @@
 .container {
 	position: relative;
-	height: 60px;
-    width: 120px;
+    margin-bottom: 2rem;
+	height: 50px;
+    width: 100px;
 	padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-	background: #fff;
-	font-size: 2.5rem;
-    border-radius: 35px;
-    text-align: center;
-
+	background: #F0F0F0;
+	font-size: 2.2rem;
 	color: var(--color-main);
+    border-radius: 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: background .3s;
+}
+.container:hover{ 
+    background: #fff;
 }
 
 .container button {
 	padding: 1rem;
-    width: 2rem;
-	background: #fff;
+    width: 2.2rem;
+	background: none;
 	border: none;
 	color: var(--color-main);
 	font-size: 2rem;	
 	transition: font-size 0.3s;
+    cursor: pointer;
 }
 
 .prev:hover,
 .next:hover {
-	font-size: 2.5rem;
+	font-size: 2.2rem;
+    
 }
 
 .counter {

@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import Category from './Category';
 import classes from './Menu.module.css';
 
+
 const DUMMY_MEALS = [
 	{
 		id: 'm1',
@@ -114,20 +115,14 @@ const DESSERTS = 'Desserts';
 export default function Menu() {
 	const [activeCategory, setActiveCategory] = useState('');
 
-    // let  categoredMeals;
-	// useEffect(() => {
-	// 	 categoredMeals = DUMMY_MEALS.reduce((acc, obj) => {
-	// 		const key = obj['category'];
-	// 		const curGroup = acc[key] ?? [];
-	// 		return { ...acc, [key]: [...curGroup, obj] };
-	// 	}, {});
-	// }, [categoredMeals, DUMMY_MEALS]);
-
-	const categoredMeals = useCallback(DUMMY_MEALS.reduce((acc, obj) => {
-        		const key = obj['category'];
-        		const curGroup = acc[key] ?? [];
-        		return { ...acc, [key]: [...curGroup, obj] };
-        	}, {}), [DUMMY_MEALS])
+	const categoredMeals = useCallback(
+		DUMMY_MEALS.reduce((acc, obj) => {
+			const key = obj['category'];
+			const curGroup = acc[key] ?? [];
+			return { ...acc, [key]: [...curGroup, obj] };
+		}, {}),
+		[DUMMY_MEALS]
+	);
 
 	const clickHandler = category => {
 		setActiveCategory(category);
@@ -135,34 +130,38 @@ export default function Menu() {
 
 	return (
 		<section className={classes.menu}>
-            <h2 className={classes.title}>Menu</h2>
+			<h2 className={classes.title}>MENU</h2>
 			<div className={classes.meals}>
-				<button onClick={()=> clickHandler(STARTERS)} className={classes['category-button']}>
-					Przystawki 
+				<button onClick={() => clickHandler(STARTERS)} className={classes['category-button']}>
+					Przystawki
 				</button>
 				{activeCategory === STARTERS && (
 					<Category mealsData={categoredMeals['Starters']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={()=>clickHandler(CHICKEN)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(CHICKEN)} className={classes['category-button']}>
 					Dania z kurczaka
 				</button>
 				{activeCategory === CHICKEN && (
 					<Category mealsData={categoredMeals['Chicken Dishes']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={()=>clickHandler(VEG)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(VEG)} className={classes['category-button']}>
 					Dania Vegańskie
 				</button>
-				{activeCategory === VEG && <Category mealsData={categoredMeals['Vegan Dishes']} className={classes[`menu-items`]} />}
-				<button onClick={()=>clickHandler(DESSERTS)} className={classes['category-button']}>
+				{activeCategory === VEG && (
+					<Category mealsData={categoredMeals['Vegan Dishes']} className={classes[`menu-items`]} />
+				)}
+				<button onClick={() => clickHandler(DESSERTS)} className={classes['category-button']}>
 					Desery
 				</button>
 				{activeCategory === DESSERTS && (
 					<Category mealsData={categoredMeals['Desserts']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={()=>clickHandler(DRINKS)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(DRINKS)} className={classes['category-button']}>
 					Napoje
 				</button>
-				{activeCategory === DRINKS && <Category mealsData={categoredMeals['Drinks']} className={classes[`menu-items`]} />}
+				{activeCategory === DRINKS && (
+					<Category mealsData={categoredMeals['Drinks']} className={classes[`menu-items`]} />
+				)}
 			</div>
 		</section>
 	);
