@@ -1,0 +1,58 @@
+.control-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.form-control {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.form-control input,
+.form-control label {
+}
+
+.form-control label {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+.form-control input,
+.form-control textarea {
+	font: inherit;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	width: 270px;
+	max-width: 100%;
+}
+
+.form-control textarea {
+	height: 10rem;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+	outline: none;
+	border-color: var(--color-main);
+	background-color: var(--color-light-gold);
+}
+
+.invalid input {
+	border: 1px solid #b40e0e;
+	background-color: #fddddd;
+}
+
+.invalid input:focus {
+	border-color: #ff8800;
+	background-color: #fbe8d2;
+}
+
+.error-text {
+	color: #b40e0e;
+	text-transform: none;
+	padding: 0.5rem;
+}

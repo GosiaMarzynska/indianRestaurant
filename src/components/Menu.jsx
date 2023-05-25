@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import Category from './Category';
 import classes from './Menu.module.css';
-
+import Section from '../UI/Section';
 
 const DUMMY_MEALS = [
 	{
@@ -129,8 +129,7 @@ export default function Menu() {
 	};
 
 	return (
-		<section className={classes.menu}>
-			<h2 className={classes.title}>MENU</h2>
+		<Section title='menu'>
 			<div className={classes.meals}>
 				<button onClick={() => clickHandler(STARTERS)} className={classes['category-button']}>
 					Przystawki
@@ -163,6 +162,6 @@ export default function Menu() {
 					<Category mealsData={categoredMeals['Drinks']} className={classes[`menu-items`]} />
 				)}
 			</div>
-		</section>
+		</Section>
 	);
 }

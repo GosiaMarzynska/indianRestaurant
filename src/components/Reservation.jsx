@@ -1,10 +1,11 @@
+import Section from '../UI/Section';
 import classes from './Reservation.module.css';
+import ReservaionForm from './ReservationForm';
 
 export default function Reservation() {
 	return (
-		<section className={classes.reservation}>
-			<h2 className={classes.title}>Reserwacje</h2>
-			<div className={classes.meals}></div>
-		</section>
+		<Section title="Rezerwacja">
+			<ReservaionForm/>
+		</Section>
 	);
 }

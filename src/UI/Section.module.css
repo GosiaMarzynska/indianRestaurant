@@ -5,6 +5,7 @@
     height: 100vh;
 	background: url(/src/assets/background-pattern.png);
     text-align: center;
+    text-transform: uppercase;
     color: var(--color-main);
 }
 .title{
