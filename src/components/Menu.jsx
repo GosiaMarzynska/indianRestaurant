@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import Category from './Category';
 import classes from './Menu.module.css';
-import Section from '../UI/Section';
+import Section from '../components/UI/Section';
 
 const DUMMY_MEALS = [
 	{

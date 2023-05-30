@@ -1,4 +1,4 @@
-import Button from '../UI/Button';
+import Button from '../components/UI/Button';
 import useInput from '../hooks/useInput';
 import classes from './ReservationForm.module.css';
 
@@ -103,7 +103,6 @@ export default function ReservaionForm() {
 	return (
 		<form onSubmit={submitHandler}>
 			<div className={classes['control-group']}>
-
 				<div className={nameClasses}>
 					<label htmlFor='name'>Imię</label>
 					<input type='text' id='firstName' onBlur={nameBlurHandler} onChange={nameChangeHandler} value={nameInput} />

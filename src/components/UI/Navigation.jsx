@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import classes from './Navigation.module.css';
 import { useState } from 'react';
+import CartButton from '../../components/Cart/CartButton';
 
 export default function Navigation() {
 	const [isActive, setIsActive] = useState(false);
@@ -9,9 +10,9 @@ export default function Navigation() {
 		setIsActive(prev => !prev);
 	};
 
-    const closeNavWindow = () => {
-        setIsActive(false);
-    }
+	const closeNavWindow = () => {
+		setIsActive(false);
+	};
 
 	// allNavItems.forEach(item => {
 	//     item.addEventListener('click', () => {
@@ -36,6 +37,7 @@ export default function Navigation() {
 
 	return (
 		<nav className={`${classes['nav-container']} ${classes.section}`}>
+			<CartButton />
 			<div className={classes['burger-btn']} onClick={openNavWindow}>
 				<div className={classes['burger-btn-box']}>
 					<div className={classes['burger-btn-bars']}></div>

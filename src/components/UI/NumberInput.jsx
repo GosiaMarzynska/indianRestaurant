@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
 import classes from './NumberInput.module.css';
 
-export default function NumberInput() {
-	const [counter, setCounter] = useState(0);
+export default function NumberInput(props) {
+	
+const {counter, setCounter} = props;
+
 
 	const increment = () =>
 		setCounter(prev => {
