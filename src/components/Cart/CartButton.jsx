@@ -11,8 +11,12 @@ const CartButton = props => {
 
 	return (
 		<button className={classes.button} onClick={toggleCartHandler}>
-			<span>Koszyk</span>
-			<span className={classes.badge}>{totalQuantity}</span>
+			<p className={classes.badge}>
+				<span className={classes.icon}>
+					<i className='fa-solid fa-cart-shopping'></i>
+				</span>
+			{totalQuantity > 0 ? <span className={classes.quantity}>{totalQuantity} </span> : null }
+			</p>
 		</button>
 	);
 };

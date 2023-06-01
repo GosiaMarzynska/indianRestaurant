@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
+import NumberInput from '../UI/NumberInput';
 import classes from './CartItem.module.css';
 
 const CartItem = props => {
@@ -7,31 +8,30 @@ const CartItem = props => {
 	const dispatch = useDispatch();
 
 	const addClickHandler = () => {
-        const counter=1;
+		const counter = 1;
 		dispatch(cartActions.addItem({ id, price, name, counter }));
 	};
 
 	const removeClickHandler = () => {
-		dispatch(cartActions.removeItem( id));
+		dispatch(cartActions.removeItem(id));
 	};
 
 	return (
 		<li className={classes.item}>
 			<header>
-				<h3>{name}</h3>
+				<p className={classes.name}>{name}</p>
 				<div className={classes.price}>
 					{total} zł <span className={classes.itemprice}>({price}zł/szt)</span>
 				</div>
 			</header>
 			<div className={classes.details}>
-				<div className={classes.quantity}>
-					x <span>{quantity}</span>
-				</div>
+				<span className={classes.quantity}>x{quantity}</span>
 				<div className={classes.actions}>
-					<button onClick={removeClickHandler}>-</button>
-					<button onClick={addClickHandler}>+</button>
+					<button className={classes['counter-button']} onClick={removeClickHandler}>-</button>
+					<button className={classes['counter-button']} onClick={addClickHandler}>+</button>
 				</div>
 			</div>
+			
 		</li>
 	);
 };

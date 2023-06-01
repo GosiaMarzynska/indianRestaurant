@@ -1,21 +1,41 @@
 .button {
-    background-color: transparent;
-    border-color: #1ad1b9;
-    color: #1ad1b9;
-  }
-  
-  .button:hover,
-  .button:active {
-    color: white;
-  }
-  
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	padding: 1rem;
+	font-size: 2rem;
+	color: var(--color-main);
+	background: none;
+	border-color: var(--color-gray-light);
+	border: 3px solid transparent;
+	border-radius: 30px;
+	cursor: pointer;
+	z-index: 1000;
+}
+.icon {
+	font-size: 2rem;
+	}
+/*   
   .button span {
     margin: 0 0.5rem;
   }
-  
-  .badge {
-    background-color: #1ad1b9;
-    border-radius: 30px;
-    padding: 0.15rem 1.25rem;
-    color: #1d1d1d;
-  }
+   */
+.badge {
+	background-color: var(--color-main);
+	border-radius: 30px;
+	padding: 1rem 1.5rem;
+	color: var(--color-gold);
+
+	box-shadow: 2px 2px 4px 1px rgba(225, 196, 115, 0.383);
+  transition: all 0.3s;
+}
+.badge:hover,
+.badge:active {
+  background-color: var(--color-second);
+	box-shadow: 1px 1px 1px  rgba(225, 196, 115, 0.383)
+}
+
+
+.quantity{
+	margin-left: 2rem;
+}

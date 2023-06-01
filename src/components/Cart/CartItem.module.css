@@ -1,12 +1,13 @@
 .item {
   margin: 1rem 0;
-  background-color: #575757;
-  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+
 }
 
-.item h3 {
-  margin: 0 0 0.5rem 0;
+.name {
   font-size: 1.75rem;
+  text-transform: uppercase;
+
 }
 
 .item header {
@@ -15,15 +16,19 @@
   align-items: baseline;
 }
 
+
+
 .details {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.75rem;  
 }
 
-.quantity span {
-  font-size: 1.5rem;
+.quantity  {
+  margin-left: 1rem;
   font-weight: bold;
+  text-transform: lowerCase;
 }
 
 .price {
@@ -45,14 +50,18 @@
 
 .actions button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 2.5rem;
   margin-left: 0.5rem;
   padding: 0.15rem 1rem;
-  color: white;
+  transition: all 0.3s;
+ 
 }
 
 .actions button:hover,
 .actions button:active {
-  background-color: #4b4b4b;
-  color: white;
+
+  background-color: var(--color-light-gold);
+  
 }

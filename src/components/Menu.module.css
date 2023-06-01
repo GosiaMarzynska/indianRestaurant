@@ -20,5 +20,5 @@
 }
 
 .category-button:hover{
-    color: #000;
+    color: var(--color-second);
 }

@@ -18,8 +18,11 @@
   --color-light-gold: #f3e8cd;
   --color-main: #4D2C3A; 
   --color-main-light: #f6dfe8; 
-  --color-second:#422731;
+  --color-second:#3c242e;
   --color-first: rgb(18, 3, 39);
+  --color-gray: #575757;
+  --color-gray-light: #828282;
+  --color-gold-transparent:  rgba(225, 196, 115, 0.683);;
 
 
 

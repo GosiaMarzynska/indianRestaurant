@@ -5,7 +5,7 @@ import { cartActions } from '../store/cart-slice';
 import classes from './MealDetails.module.css';
 
 export default function MealDetails(props) {
-	const [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(1);
 
 	const dispatch = useDispatch();
 

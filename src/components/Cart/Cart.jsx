@@ -7,6 +7,7 @@ import Checkout from './Checkout';
 import { cartActions } from '../../store/cart-slice';
 import { uiActions } from '../../store/ui-slice';
 
+
 const URL_ORDER = 'https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/orders.json';
 
 const Cart = props => {
@@ -34,11 +35,14 @@ const Cart = props => {
 	));
 
 	const hastItems = cartProducts.length > 0;
-
+	
 	const orderHandler = () => {
 		setIsOrdered(true);
 	};
-
+	const closeModal = () => {
+		dispatch(uiActions.toggle());
+	};
+	
 	const sumbitOrderHandler = async userData => {
 		setIsSubmitting(true);
 		try {
@@ -61,7 +65,7 @@ const Cart = props => {
 
 	const modalActions = (
 		<div className={classes.actions}>
-			<button onClick={props.closeModal} className={classes['button--alt']}>
+			<button onClick={closeModal} className={classes['close-button']}>
 				Zamknij
 			</button>
 			{hastItems && (
@@ -75,9 +79,9 @@ const Cart = props => {
 	const cartModalContent = (
 		<>
 			<div className={classes.cart}>
-				<h2>Twój koszyk</h2>
+				<h2>Twoje zamówienie:</h2>
 				<ul>{cartProducts}</ul>
-				<p>Razem: {finalCost}zł</p>
+				<p className={classes['final-cost']}>Razem:<span className={classes.sum}>{finalCost}zł</span></p>
 			</div>
 			{isOrdered && <Checkout onConfirm={sumbitOrderHandler} onCancel={props.onCancel} error={error} />}
 			{!isOrdered && modalActions}
@@ -90,16 +94,13 @@ const Cart = props => {
 		<>
 			<p>{notification.message || ''}</p>
 			<div className={classes.actions}>
-				<button onClick={props.closeModal} className={classes['button--alt']}>
+				<button onClick={closeModal} className={classes['close-button']}>
 					Zamknij
 				</button>
 			</div>
 		</>
 	);
-
-    const closeModal = () => {
-		dispatch(uiActions.toggle());
-	};
+	
 
 	return (
 		<Modal closeModal={closeModal}>

@@ -14,7 +14,7 @@ const {counter, setCounter} = props;
 		});
 	const decrement = () =>
 		setCounter(prev => {
-			if (prev > 0) {
+			if (prev > 1) {
 				prev--;
 			}
             return prev;
