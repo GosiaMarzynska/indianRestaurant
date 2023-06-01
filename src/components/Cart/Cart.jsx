@@ -1,12 +1,25 @@
-// import Card from '../UI/Card';
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
-import { useSelector } from 'react-redux';
+import Modal from '../UI/Modal';
+import Checkout from './Checkout';
+import { cartActions } from '../../store/cart-slice';
+import { uiActions } from '../../store/ui-slice';
+
+const URL_ORDER = 'https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/orders.json';
 
 const Cart = props => {
+	const [isOrdered, setIsOrdered] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [didSubmit, setDidSubmit] = useState(false);
+	const [error, setError] = useState(null);
 	const productsArray = useSelector(state => state.cart.items);
-    const finalCost = useSelector(state=> state.cart.finalPrice)
-	console.log(productsArray);
+	const finalCost = useSelector(state => state.cart.finalPrice);
+	const notification = useSelector(state => state.ui.notification);
+	const cart = useSelector(state => state.cart);
+	const dispatch = useDispatch();
+
 	const cartProducts = productsArray.map(product => (
 		<CartItem
 			key={product.id}
@@ -19,12 +32,81 @@ const Cart = props => {
 			}}
 		/>
 	));
-	return (
-		<div className={classes.cart}>
-			<h2>Twój koszyk</h2>
-			<ul>{cartProducts}</ul>
-            <p>Razem: {finalCost}zł</p>
+
+	const hastItems = cartProducts.length > 0;
+
+	const orderHandler = () => {
+		setIsOrdered(true);
+	};
+
+	const sumbitOrderHandler = async userData => {
+		setIsSubmitting(true);
+		try {
+			const response = await fetch(URL_ORDER, {
+				method: 'POST',
+				body: JSON.stringify({ user: userData, orderedItems: cart }),
+			});
+
+			if (!response.ok) {
+				throw new Error('Request failed!');
+			}
+		} catch (error) {
+			setError(error.message || 'Something went wrong!');
+		}
+
+		setIsSubmitting(false);
+		setDidSubmit(true);
+		dispatch(cartActions.clearCart);
+	};
+
+	const modalActions = (
+		<div className={classes.actions}>
+			<button onClick={props.closeModal} className={classes['button--alt']}>
+				Zamknij
+			</button>
+			{hastItems && (
+				<button className={classes.button} onClick={orderHandler}>
+					Zamów
+				</button>
+			)}
 		</div>
+	);
+
+	const cartModalContent = (
+		<>
+			<div className={classes.cart}>
+				<h2>Twój koszyk</h2>
+				<ul>{cartProducts}</ul>
+				<p>Razem: {finalCost}zł</p>
+			</div>
+			{isOrdered && <Checkout onConfirm={sumbitOrderHandler} onCancel={props.onCancel} error={error} />}
+			{!isOrdered && modalActions}
+		</>
+	);
+
+	const isSubmittingModalContent = <p>Przesyłam zamówienie...</p>;
+
+	const didSubmitModalConstet = (
+		<>
+			<p>{notification.message || ''}</p>
+			<div className={classes.actions}>
+				<button onClick={props.closeModal} className={classes['button--alt']}>
+					Zamknij
+				</button>
+			</div>
+		</>
+	);
+
+    const closeModal = () => {
+		dispatch(uiActions.toggle());
+	};
+
+	return (
+		<Modal closeModal={closeModal}>
+			{!isSubmitting && !didSubmit && cartModalContent}
+			{isSubmitting && isSubmittingModalContent}
+			{didSubmit && didSubmitModalConstet}
+		</Modal>
 	);
 };
 

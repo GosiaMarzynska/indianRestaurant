@@ -1,40 +1,41 @@
 import { uiActions } from './ui-slice';
 import { cartActions } from './cart-slice';
 
-const URL = "https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/cart.json"
+const URL = 'https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/cart.json';
 
 export const fetchCartData = () => {
-  return async (dispatch) => {
-    const fetchData = async () => {
-      const response = await fetch(URL);
+	return async dispatch => {
+		const fetchData = async () => {
+			const response = await fetch(URL);
 
-      if (!response.ok) {
-        throw new Error('Could not fetch cart data!');
-      }
+			if (!response.ok) {
+				throw new Error('Could not fetch cart data!');
+			}
 
-      const data = await response.json();
+			const data = await response.json();
 
-      return data;
-    };
+			return data;
+		};
 
-    try {
-      const cartData = await fetchData();
-      dispatch(
-        cartActions.replaceCart({
-          items: cartData.items || [],
-          totalQuantity: cartData.totalQuantity,
-        })
-      );
-    } catch (error) {
-      dispatch(
-        uiActions.showNotification({
-          status: 'error',
-          title: 'Error!',
-          message: 'Fetching cart data failed!',
-        })
-      );
-    }
-  };
+		try {
+			const cartData = await fetchData();
+			dispatch(
+				cartActions.replaceCart({
+					items: cartData.items || [],
+					totalQuantity: cartData.totalQuantity,
+                    finalPrice: cartData.finalPrice                    
+				})
+			);
+		} catch (error) {
+			dispatch(
+				uiActions.showNotification({
+					status: 'error',
+					title: 'Error!',
+					message: 'Fetching cart data failed!',
+				})
+			);
+		}
+	};
 };
 
 export const sendCartData = cart => {
@@ -48,14 +49,12 @@ export const sendCartData = cart => {
 		);
 
 		const sendRequest = async () => {
-			const response = await fetch(
-				URL,
-				{
-					method: 'PUT',
-					body: JSON.stringify({items: cart.items,
-                    totalQuantity: cart.totalQuantity}),
-				}
-			);
+			const response = await fetch(URL, {
+				method: 'PUT',
+				body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity,
+                finalPrice: cart.finalPrice,
+                 }),
+			});
 
 			if (!response.ok) {
 				throw new Error('Sending cart data failed.');
@@ -72,13 +71,14 @@ export const sendCartData = cart => {
 				})
 			);
 		} catch (error) {
-            dispatch(
+			dispatch(
 				uiActions.showNotification({
 					status: 'error',
 					title: 'Błąd!',
 					message: 'Nie udało się dodać do zamówienia',
 				})
 			);
-        }
+		}
 	};
 };
+

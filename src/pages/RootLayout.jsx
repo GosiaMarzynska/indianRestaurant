@@ -9,11 +9,10 @@ import { sendCartData, fetchCartData } from '../store/cart-actions';
 let isInitial = true;
 
 export default function RootLayout() {
-	const dispatch = useDispatch();
+		const dispatch = useDispatch();
 	const showCart = useSelector(state => state.ui.cartIsVisible);
 	const cart = useSelector(state => state.cart);
-	const notification = useSelector(state => state.ui.notification);
-
+	
 	useEffect(() => {
 		dispatch(fetchCartData());
 	}, [dispatch]);
@@ -30,13 +29,11 @@ export default function RootLayout() {
 
 	return (
 		<>
-			{notification && (
-				<Notification status={notification.status} title={notification.title} message={notification.message} />
-			)}
+		
 			<Navigation />
 			{showCart && <Cart />}
 			<main>
-				{/* {navigation.state=== 'loading'  && <p>Loading...</p> } */}
+				
 				<Outlet />
 			</main>
 		</>

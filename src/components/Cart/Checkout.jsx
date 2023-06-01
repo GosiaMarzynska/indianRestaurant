@@ -1,8 +1,8 @@
-import Button from '../components/UI/Button';
-import useInput from '../hooks/useInput';
-import classes from './ReservationForm.module.css';
+import Button from '../UI/Button';
+import useInput from '../../hooks/useInput';
+import classes from './Checkout.module.css';
 
-export default function ReservaionForm() {
+export default function Checkout(props) {
 	const {
 		value: nameInput,
 		isValid: nameIsValid,
@@ -10,6 +10,33 @@ export default function ReservaionForm() {
 		valueChangeHandler: nameChangeHandler,
 		inputBlurHandler: nameBlurHandler,
 		reset: nameReset,
+	} = useInput(value => value.trim() !== '');
+
+	const {
+		value: adressInput,
+		isValid: adressIsValid,
+		hasError: adressIsInvalid,
+		valueChangeHandler: adressChangeHandler,
+		inputBlurHandler: adressBlurHandler,
+		reset: adressReset,
+	} = useInput(value => value.trim() !== '');
+
+	const {
+		value: postalInput,
+		isValid: postalIsValid,
+		hasError: postalIsInvalid,
+		valueChangeHandler: postalChangeHandler,
+		inputBlurHandler: postalBlurHandler,
+		reset: postalReset,
+	} = useInput(value => value.trim() !== '');
+
+	const {
+		value: cityInput,
+		isValid: cityIsValid,
+		hasError: cityIsInvalid,
+		valueChangeHandler: cityChangeHandler,
+		inputBlurHandler: cityBlurHandler,
+		reset: cityReset,
 	} = useInput(value => value.trim() !== '');
 
 	const {
@@ -31,24 +58,6 @@ export default function ReservaionForm() {
 	} = useInput(value => value.trim().length === 9);
 
 	const {
-		value: dateInput,
-		isValid: dateIsValid,
-		hasError: dateIsInvalid,
-		valueChangeHandler: dateChangeHandler,
-		inputBlurHandler: dateBlurHandler,
-		reset: dateReset,
-	} = useInput(value => value.trim() !== '');
-
-	const {
-		value: timeInput,
-		isValid: timeIsValid,
-		hasError: timeIsInvalid,
-		valueChangeHandler: timeChangeHandler,
-		inputBlurHandler: timeBlurHandler,
-		reset: timeReset,
-	} = useInput(value => value.trim() !== '');
-
-	const {
 		value: extraInput,
 		valueChangeHandler: extraChangeHandler,
 		inputBlurHandler: extraBlurHandler,
@@ -57,44 +66,80 @@ export default function ReservaionForm() {
 
 	const inputsReset = () => {
 		nameReset();
+		adressReset();
+		postalReset();
+		cityReset();
 		emailReset();
 		phoneReset();
-		dateReset();
-		timeReset();
 		extraReset();
 	};
 
-	const formIsValid = nameIsValid && emailIsValid && dateIsValid && phoneIsValid && timeIsValid;
+	const formIsValid = nameIsValid && adressIsValid && postalIsValid && cityIsValid && phoneIsValid && emailIsValid;
 
-	const submitHandler = event => {
+	const confirmHandler = event => {
 		event.preventDefault();
 
 		if (!formIsValid) {
 			return;
 		}
 
-		console.log(`Name: ${nameInput}
-             Email: ${emailInput}
-             Phone: ${phoneInput}
-             Date: ${dateInput}
-             Time: ${timeInput}`);
+		props.onConfirm({
+			name: nameInput,
+			adress: adressInput,
+			postal: postalInput,
+			city: cityInput,
+			email: emailInput,
+			phone: phoneInput,
+		});
+
 		inputsReset();
 	};
 
 	const nameClasses = nameIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
+	const adressClasses = adressIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
+	const postalClasses = postalIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
+	const cityClasses = cityIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
 	const emailClasses = emailIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
 	const phoneClasses = phoneIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
-	const dateClasses = dateIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
-	const timeClasses = timeIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
 	const extraClasses = classes['form-control'];
 
 	return (
-		<form onSubmit={submitHandler}>
+		<form onSubmit={confirmHandler}>
 			<div className={classes['control-group']}>
 				<div className={nameClasses}>
 					<label htmlFor='name'>Imię i Nazwisko</label>
 					<input type='text' id='name' onBlur={nameBlurHandler} onChange={nameChangeHandler} value={nameInput} />
 					{nameIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+				</div>
+
+				<div className={adressClasses}>
+					<label htmlFor='adress'>Adres</label>
+					<input
+						type='text'
+						id='adress'
+						onBlur={adressBlurHandler}
+						onChange={adressChangeHandler}
+						value={adressInput}
+					/>
+					{adressIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+				</div>
+
+				<div className={postalClasses}>
+					<label htmlFor='postal'>Kod pocztowy</label>
+					<input
+						type='text'
+						id='postal'
+						onBlur={postalBlurHandler}
+						onChange={postalChangeHandler}
+						value={postalInput}
+					/>
+					{postalIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+				</div>
+
+				<div className={cityClasses}>
+					<label htmlFor='city'>Miasto</label>
+					<input type='text' id='city' onBlur={cityBlurHandler} onChange={cityChangeHandler} value={cityInput} />
+					{cityIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
 				</div>
 
 				<div className={emailClasses}>
@@ -116,28 +161,6 @@ export default function ReservaionForm() {
 					{phoneIsInvalid && <p className={classes['error-text']}>Telefon musi zawierać 9 cyfr</p>}
 				</div>
 
-				<div className={dateClasses}>
-					<label htmlFor='date'>Data</label>
-					<input type='date' id='date' onBlur={dateBlurHandler} onChange={dateChangeHandler} value={dateInput} />
-					{dateIsInvalid && <p className={classes['error-text']}>Data jest niepoprawna</p>}
-				</div>
-
-				<div className={timeClasses}>
-					<label htmlFor='time'>Godzina</label>
-					<input
-						type='time'
-						id='time'
-						onBlur={timeBlurHandler}
-						onChange={timeChangeHandler}
-						value={timeInput}
-						min='11:00'
-						max='20:00'
-					/>
-					{timeIsInvalid && (
-						<p className={classes['error-text']}>Możliwość rezerwacji stolika między godziną 11:00 a 20:00</p>
-					)}
-				</div>
-
 				<div className={extraClasses}>
 					<label htmlFor='extra'>Informacje dodatkowe</label>
 					<textarea
@@ -149,9 +172,8 @@ export default function ReservaionForm() {
 					/>
 				</div>
 			</div>
-
 			<div className='form-actions'>
-				<Button text='Prześlij' />
+				<Button disabled={!formIsValid} text='Prześlij' />
 			</div>
 		</form>
 	);
