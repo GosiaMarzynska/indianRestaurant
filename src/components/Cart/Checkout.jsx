@@ -104,77 +104,80 @@ export default function Checkout(props) {
 	const extraClasses = classes['form-control'];
 
 	return (
-		<form onSubmit={confirmHandler}>
-			<div className={classes['control-group']}>
-				<div className={nameClasses}>
-					<label htmlFor='name'>Imię i Nazwisko</label>
-					<input type='text' id='name' onBlur={nameBlurHandler} onChange={nameChangeHandler} value={nameInput} />
-					{nameIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
-				</div>
+		<>
+		<h2 className={classes.title}>DANE OSOBOWE:</h2>
+			<form onSubmit={confirmHandler}>
+				<div className={classes['control-group']}>
+					<div className={nameClasses}>
+						<label htmlFor='name'>Imię i Nazwisko</label>
+						<input type='text' id='name' onBlur={nameBlurHandler} onChange={nameChangeHandler} value={nameInput} />
+						{nameIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+					</div>
 
-				<div className={adressClasses}>
-					<label htmlFor='adress'>Adres</label>
-					<input
-						type='text'
-						id='adress'
-						onBlur={adressBlurHandler}
-						onChange={adressChangeHandler}
-						value={adressInput}
-					/>
-					{adressIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
-				</div>
+					<div className={adressClasses}>
+						<label htmlFor='adress'>Adres</label>
+						<input
+							type='text'
+							id='adress'
+							onBlur={adressBlurHandler}
+							onChange={adressChangeHandler}
+							value={adressInput}
+						/>
+						{adressIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+					</div>
 
-				<div className={postalClasses}>
-					<label htmlFor='postal'>Kod pocztowy</label>
-					<input
-						type='text'
-						id='postal'
-						onBlur={postalBlurHandler}
-						onChange={postalChangeHandler}
-						value={postalInput}
-					/>
-					{postalIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
-				</div>
+					<div className={postalClasses}>
+						<label htmlFor='postal'>Kod pocztowy</label>
+						<input
+							type='text'
+							id='postal'
+							onBlur={postalBlurHandler}
+							onChange={postalChangeHandler}
+							value={postalInput}
+						/>
+						{postalIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+					</div>
 
-				<div className={cityClasses}>
-					<label htmlFor='city'>Miasto</label>
-					<input type='text' id='city' onBlur={cityBlurHandler} onChange={cityChangeHandler} value={cityInput} />
-					{cityIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
-				</div>
+					<div className={cityClasses}>
+						<label htmlFor='city'>Miasto</label>
+						<input type='text' id='city' onBlur={cityBlurHandler} onChange={cityChangeHandler} value={cityInput} />
+						{cityIsInvalid && <p className={classes['error-text']}>Pole nie może być puste</p>}
+					</div>
 
-				<div className={emailClasses}>
-					<label htmlFor='email'>E-Mail</label>
-					<input type='email' id='email' onBlur={emailBlurHandler} onChange={emailChangeHandler} value={emailInput} />
-					{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać "@" and "."</p>}
-				</div>
+					<div className={emailClasses}>
+						<label htmlFor='email'>E-Mail</label>
+						<input type='email' id='email' onBlur={emailBlurHandler} onChange={emailChangeHandler} value={emailInput} />
+						{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać "@" and "."</p>}
+					</div>
 
-				<div className={phoneClasses}>
-					<label htmlFor='phone'>Telefon</label>
-					<input
-						type='tel'
-						id='phone'
-						onBlur={phoneBlurHandler}
-						onChange={phoneChangeHandler}
-						value={phoneInput}
-						pattern='[0-9]{9}'
-					/>
-					{phoneIsInvalid && <p className={classes['error-text']}>Telefon musi zawierać 9 cyfr</p>}
-				</div>
+					<div className={phoneClasses}>
+						<label htmlFor='phone'>Telefon</label>
+						<input
+							type='tel'
+							id='phone'
+							onBlur={phoneBlurHandler}
+							onChange={phoneChangeHandler}
+							value={phoneInput}
+							pattern='[0-9]{9}'
+						/>
+						{phoneIsInvalid && <p className={classes['error-text']}>Telefon musi zawierać 9 cyfr</p>}
+					</div>
 
-				<div className={extraClasses}>
-					<label htmlFor='extra'>Informacje dodatkowe</label>
-					<textarea
-						type='textarea'
-						id='extra'
-						onChange={extraChangeHandler}
-						value={extraInput}
-						onBlur={extraBlurHandler}
-					/>
+					<div className={extraClasses}>
+						<label htmlFor='extra'>Informacje dodatkowe</label>
+						<textarea
+							type='textarea'
+							id='extra'
+							onChange={extraChangeHandler}
+							value={extraInput}
+							onBlur={extraBlurHandler}
+						/>
+					</div>
 				</div>
-			</div>
-			<div className='form-actions'>
-				<Button disabled={!formIsValid} text='Prześlij' />
-			</div>
-		</form>
+				<div className='form-actions'>
+					<Button disabled={!formIsValid} text='Prześlij' />
+				</div>
+			</form>
+		</>
 	);
 }

@@ -4,6 +4,7 @@ import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import MenuPage from './pages/MenuPage';
 import ReservationPage from './pages/ReservationPage';
+import OrderPage from './pages/OrderPage';
 
 function App() {
 	const router = createBrowserRouter([
@@ -20,6 +21,10 @@ function App() {
 				{
 					path: 'rezerwacje',
 					element: <ReservationPage />,
+				},
+				{
+					path: 'zamowienie',
+					element: <OrderPage />,
 				},
 			],
 		},
