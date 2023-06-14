@@ -62,3 +62,10 @@
 	background: var(--color-gray-light);
 	box-shadow: 3px 3px 4px #000;
 }
+
+.info {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 1rem 0;
+	margin-bottom: 3rem;
+}

@@ -16,9 +16,10 @@ export default function Order() {
 	const [error, setError] = useState(null);
 	const productsArray = useSelector(state => state.cart.items);
 	const finalCost = useSelector(state => state.cart.finalPrice);
-	const notification = useSelector(state => state.ui.notification);
 	const cart = useSelector(state => state.cart);
 	const dispatch = useDispatch();
+
+	const orderNumber = Math.floor(Math.random() * (1000000 - 100000) + 100000);
 
 	const cartProducts = productsArray.map(product => (
 		<CartItem
@@ -35,16 +36,12 @@ export default function Order() {
 
 	const hasItems = cartProducts.length > 0;
 
-	const closeModal = () => {
-		dispatch(uiActions.toggle());
-	};
-
 	const sumbitOrderHandler = async userData => {
 		setIsSubmitting(true);
 		try {
 			const response = await fetch(URL_ORDER, {
 				method: 'POST',
-				body: JSON.stringify({ user: userData, orderedItems: cart }),
+				body: JSON.stringify({ orderNumber: orderNumber, user: userData, orderedItems: cart }),
 			});
 
 			if (!response.ok) {
@@ -56,7 +53,7 @@ export default function Order() {
 
 		setIsSubmitting(false);
 		setDidSubmit(true);
-		dispatch(cartActions.clearCart);
+		dispatch(cartActions.clearCart());
 	};
 
 	const cartModalContent = (
@@ -68,20 +65,28 @@ export default function Order() {
 					Razem:<span className={classes.sum}>{finalCost}zł</span>
 				</p>
 			</div>
-			{hasItems && <Checkout onConfirm={sumbitOrderHandler} error={error} /> }
-            {!hasItems && <Link to='/menu'>
-                <Button text="Powrót do menu" />
-                </Link>}
-
+			{hasItems && <Checkout onConfirm={sumbitOrderHandler} error={error} />}
+			{!hasItems && (
+				<Link to='/menu'>
+					<Button text='Powrót do menu' />
+				</Link>
+			)}
 		</>
 	);
 
 	const isSubmittingModalContent = <p>Przesyłam zamówienie...</p>;
 
-	const didSubmitModalConstet = (
+	const didSubmitModalContent = (
 		<>
-			<p>{notification.message || ''}</p>
+			<h3 className={classes['order-message']}>Otrzymaliśmy Twoje zamówienie!</h3>
+			<p className={classes['order-info']}>
+				Twoje zamównienie nr <span className={classes['order-number']}>{orderNumber} </span>zostało złożone. Na maila
+				otrzymasz informacje z godziną przyjazdu dostawcy.
+			</p>
 			<div className={classes.actions}></div>
+			<Link to='/menu'>
+				<Button text='Powrót do menu' />
+			</Link>
 		</>
 	);
 
@@ -89,7 +94,7 @@ export default function Order() {
 		<Section title='Zamówienie'>
 			{!isSubmitting && !didSubmit && cartModalContent}
 			{isSubmitting && isSubmittingModalContent}
-			{didSubmit && didSubmitModalConstet}
+			{didSubmit && didSubmitModalContent}
 		</Section>
 	);
 }

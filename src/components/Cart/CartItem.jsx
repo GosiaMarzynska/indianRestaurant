@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
-import NumberInput from '../UI/NumberInput';
 import classes from './CartItem.module.css';
 
 const CartItem = props => {
@@ -27,11 +26,14 @@ const CartItem = props => {
 			<div className={classes.details}>
 				<span className={classes.quantity}>x{quantity}</span>
 				<div className={classes.actions}>
-					<button className={classes['counter-button']} onClick={removeClickHandler}>-</button>
-					<button className={classes['counter-button']} onClick={addClickHandler}>+</button>
+					<button className={classes['counter-button']} onClick={removeClickHandler}>
+						-
+					</button>
+					<button className={classes['counter-button']} onClick={addClickHandler}>
+						+
+					</button>
 				</div>
 			</div>
-			
 		</li>
 	);
 };

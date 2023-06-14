@@ -23,8 +23,8 @@ const Cart = () => {
 		/>
 	));
 
-	const hastItems = cartProducts.length > 0;
-	
+	const hasItems = cartProducts.length > 0;
+
 	const closeModal = () => {
 		dispatch(uiActions.toggle());
 	};
@@ -34,9 +34,9 @@ const Cart = () => {
 			<button onClick={closeModal} className={classes['close-button']}>
 				Zamknij
 			</button>
-			{hastItems && (
+			{hasItems && (
 				<Link to='/zamowienie'>
-					<button className={classes.button}>
+					<button onClick={closeModal} className={classes.button}>
 						Zamów
 					</button>
 				</Link>
@@ -57,7 +57,14 @@ const Cart = () => {
 		</>
 	);
 
-	return <Modal closeModal={closeModal}>{cartModalContent}</Modal>;
+	const emtyCart = (
+		<div className={classes.cart}>
+			<p className={classes.info}>Twój koszyk jest pusty</p>
+			{modalActions}
+		</div>
+	);
+
+	return <Modal closeModal={closeModal}>{hasItems ? cartModalContent : emtyCart}</Modal>;
 };
 
 export default Cart;

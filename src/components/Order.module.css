@@ -1,6 +1,6 @@
 .cart {
 	padding: 2rem;
-    margin-bottom: 8rem;
+	margin-bottom: 8rem;
 	color: var(--color-second);
 }
 
@@ -14,13 +14,13 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
-    }
+}
 
-.final-cost {    
+.final-cost {
 	font-size: 2rem;
 	text-align: right;
 	text-transform: uppercase;
-   }
+}
 
 .sum {
 	margin-left: 1rem;
@@ -28,11 +28,11 @@
 	text-transform: none;
 }
 
-.actions{
-text-align: right;
+.actions {
+	text-align: right;
 }
 
-.actions button{	
+.actions button {
 	padding: 1.5rem 3rem;
 	margin-top: 3rem;
 	color: var(--color-light-gold);
@@ -46,22 +46,38 @@ text-align: right;
 	cursor: pointer;
 }
 
-.button {	
+.button {
 	background: var(--color-main);
-}	
+}
 
 .button:hover {
 	background: var(--color-second);
 	box-shadow: 3px 3px 4px #000;
 }
 
-
-.close-button{
-margin-right: 2rem;
+.close-button {
+	margin-right: 2rem;
 	background: var(--color-gray);
 }
 
-.close-button:hover{
+.close-button:hover {
 	background: var(--color-gray-light);
 	box-shadow: 3px 3px 4px #000;
+}
+
+.order-message {
+	font-size: 2rem;
+	padding: 3rem 0;
+	text-transform: none;
+}
+
+.order-info {
+	padding: 2rem;
+	padding-bottom: 10rem;
+	font-size: 2rem;
+	text-transform: none;
+}
+
+.order-number {
+	font-weight: bold;
 }

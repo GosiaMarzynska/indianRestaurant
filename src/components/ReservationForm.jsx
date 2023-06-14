@@ -37,7 +37,7 @@ export default function ReservaionForm() {
 		valueChangeHandler: dateChangeHandler,
 		inputBlurHandler: dateBlurHandler,
 		reset: dateReset,
-	} = useInput(value => value.trim() !== '');
+	} = useInput(value => value.trim() !== '' && value);
 
 	const {
 		value: timeInput,
@@ -151,7 +151,7 @@ export default function ReservaionForm() {
 			</div>
 
 			<div className='form-actions'>
-				<Button text='Prześlij' />
+				<Button text='Prześlij' disabled={!formIsValid}/>
 			</div>
 		</form>
 	);

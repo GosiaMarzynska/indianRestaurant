@@ -16,3 +16,13 @@
   background: var(--color-second);
   box-shadow: 3px 3px 4px #000;
 }
+
+button:disabled{
+  cursor: default;
+  background: var(--color-gray);
+}
+
+button:disabled:hover{
+  box-shadow: 5px 5px 10px #111;
+  background: var(--color-gray);
+}
