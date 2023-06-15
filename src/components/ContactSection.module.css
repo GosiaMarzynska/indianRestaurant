@@ -3,13 +3,17 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding: 2em;
+	padding: 4em 2em;
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.598)), url('src/assets/restaurant.jpg');
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 }
 
-.contact-box {	
+.contact-box {
+	padding: 60px 0;
+	color: var(--color-light-gold);
+	border: 3px solid;
 	text-decoration: none;
 }
 
@@ -32,21 +36,3 @@
 	padding-top: 4rem;
 	line-height: 34px;
 }
-
-
-.title{ 
-	padding: 6rem 0;
-}
-.mapouter {
-	position: relative;
-	text-align: right;
-	height: 50vh;
-	width: 100%;
-}
-.gmap-canvas {
-	overflow: hidden;
-	background: none !important;
-	height: 50vh;
-	width: 100%;
-}
-

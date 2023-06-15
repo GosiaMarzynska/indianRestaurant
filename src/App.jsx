@@ -5,6 +5,7 @@ import HomePage from './pages/Home';
 import MenuPage from './pages/MenuPage';
 import ReservationPage from './pages/ReservationPage';
 import OrderPage from './pages/OrderPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
 	const router = createBrowserRouter([
@@ -25,6 +26,10 @@ function App() {
 				{
 					path: 'zamowienie',
 					element: <OrderPage />,
+				},
+				{
+					path: 'kontakt',
+					element: <ContactPage />,
 				},
 			],
 		},

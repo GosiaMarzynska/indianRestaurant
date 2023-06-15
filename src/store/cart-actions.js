@@ -1,7 +1,9 @@
 import { uiActions } from './ui-slice';
 import { cartActions } from './cart-slice';
 
-const URL = 'https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/cart.json';
+const URL = 'https://react-deployment-demo-b053a-default-rtdb.europe-west1.firebasedatabase.app/cart.json';
+
+
 
 export const fetchCartData = () => {
 	return async dispatch => {
@@ -23,7 +25,7 @@ export const fetchCartData = () => {
 				cartActions.replaceCart({
 					items: cartData.items || [],
 					totalQuantity: cartData.totalQuantity,
-                    finalPrice: cartData.finalPrice                    
+					finalPrice: cartData.finalPrice,
 				})
 			);
 		} catch (error) {
@@ -51,9 +53,7 @@ export const sendCartData = cart => {
 		const sendRequest = async () => {
 			const response = await fetch(URL, {
 				method: 'PUT',
-				body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity,
-                finalPrice: cart.finalPrice,
-                 }),
+				body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity, finalPrice: cart.finalPrice }),
 			});
 
 			if (!response.ok) {
@@ -81,4 +81,3 @@ export const sendCartData = cart => {
 		}
 	};
 };
-

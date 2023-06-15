@@ -8,7 +8,7 @@ import Section from './UI/Section';
 import { Link } from 'react-router-dom';
 import Button from './UI/Button';
 
-const URL_ORDER = 'https://react-http-b7d60-default-rtdb.europe-west1.firebasedatabase.app/orders.json';
+const URL_ORDER = 'https://react-deployment-demo-b053a-default-rtdb.europe-west1.firebasedatabase.app/orders.json';
 
 export default function Order() {
 	const [isSubmitting, setIsSubmitting] = useState(false);

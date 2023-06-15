@@ -150,7 +150,7 @@ export default function ReservaionForm() {
 				</div>
 			</div>
 
-			<div className='form-actions'>
+			<div className={classes['form-actions']}>
 				<Button text='Prześlij' disabled={!formIsValid}/>
 			</div>
 		</form>

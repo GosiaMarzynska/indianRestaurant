@@ -52,3 +52,7 @@
 	text-transform: none;
 	padding: 0.5rem;
 }
+
+.form-actions {
+	padding-top: 3rem;
+}

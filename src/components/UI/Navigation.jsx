@@ -71,7 +71,7 @@ export default function Navigation() {
 				<Link to='/rezerwacje' className={classes['nav-item']}>
 					Rezerwacje
 				</Link>
-				<Link href='/kontakt' className={classes['nav-item']}>
+				<Link to='/kontakt' className={classes['nav-item']}>
 					Kontakt
 				</Link>
 			</div>
