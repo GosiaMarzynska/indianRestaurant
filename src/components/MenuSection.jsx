@@ -5,7 +5,7 @@ export default function MenuSection() {
 	return (
 		<Link to='/menu'>
 			<section className={classes['menu-section']}>
-				<h2 className={classes.title}>Menu</h2>
+				<h2 className={classes.title}>Menu</h2>				
 			</section>
 		</Link>
 	);

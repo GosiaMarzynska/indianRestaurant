@@ -1,6 +1,6 @@
-import classes from './ReservationSection.module.css';
 import { Link } from 'react-router-dom';
 import Button from '../components/UI/Button';
+import classes from './ReservationSection.module.css';
 
 export default function ReservationSection() {
 	return (

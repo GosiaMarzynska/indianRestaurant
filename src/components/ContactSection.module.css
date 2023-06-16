@@ -36,3 +36,11 @@
 	padding-top: 4rem;
 	line-height: 34px;
 }
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) {
+	.contact {
+		padding: 3rem 5rem;
+	}
+}

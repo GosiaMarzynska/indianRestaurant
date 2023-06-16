@@ -1,28 +1,37 @@
 .button {
-    padding: 1.5rem 3rem;
-  text-decoration: none;
-  color: var(--color-light-gold);
-  background: var(--color-main);
-  border-radius: 3rem;
-  font: inherit;
-  transition: all .3s;
-  box-shadow: 5px 5px 10px #111;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
+	padding: 1.5rem 3rem;
+	text-decoration: none;
+	color: var(--color-light-gold);
+	background: var(--color-main);
+	border-radius: 3rem;
+	font: inherit;
+	transition: all 0.3s;
+	box-shadow: 5px 5px 10px #111;
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .button:hover {
-  background: var(--color-second);
-  box-shadow: 3px 3px 4px #000;
+	background: var(--color-second);
+	box-shadow: 3px 3px 4px #000;
 }
 
-button:disabled{
-  cursor: default;
-  background: var(--color-gray);
+button:disabled {
+	cursor: default;
+	background: var(--color-gray);
 }
 
-button:disabled:hover{
-  box-shadow: 5px 5px 10px #111;
-  background: var(--color-gray);
+button:disabled:hover {
+	box-shadow: 5px 5px 10px #111;
+	background: var(--color-gray);
+}
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) {
+	.button {
+		padding: 1.8rem 3.6rem;
+    font-size: 2rem;
+	}
 }

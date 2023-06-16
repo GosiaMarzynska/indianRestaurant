@@ -4,7 +4,7 @@
 	justify-content: center;	
 	flex-direction: column;
 	padding: 2em;
-	height: 50vh;
+	height: 60vh;
 	text-align: center;
     background-image:linear-gradient(45deg, rgba(0, 0, 0, 0.543), rgba(0, 0, 0, 0.598)), url('src/assets/meals/indian-dishes-small.jpg');
 	background-size: cover;
@@ -13,10 +13,23 @@
 }
 
 .title {
-    padding: 80px 0;
+    padding: 100px 0;
     font-size: 48px;
     text-transform: uppercase;
     color: var(--color-light-gold);
     border: 3px solid;
     text-decoration: none;
+}
+
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) { 
+	.menu-section{
+		padding: 3rem 5rem;
+	}
+
+    .title {
+		font-size: 56px;
+	}
 }

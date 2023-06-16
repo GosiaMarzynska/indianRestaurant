@@ -1,39 +1,57 @@
-.reservation{
-    position: relative;
-    padding: 7rem 3rem; 
+.reservation {
+	position: relative;
+	padding: 7rem 3rem;
 	width: 100%;
 	background: url(/src/assets/background-pattern.png);
-    text-align: center;
-    color: var(--color-main);
+	text-align: center;
+	color: var(--color-main);
 }
 
 .title {
-    text-transform: uppercase;
-    color: var(--color-main);
-
+	text-transform: uppercase;
+	color: var(--color-main);
 }
 
 .text {
-    padding-top: 30px;
-    text-align: justify;
-    line-height: 24px;
-    padding-bottom: 3rem;
+	padding-top: 30px;
+	text-align: justify;
+	line-height: 24px;
+	padding-bottom: 3rem;
 }
 
 .button {
-    padding: 1.5rem 3rem;
-  text-decoration: none;
-  color: var(--color-light-gold);
-  background: var(--color-main);
-  border-radius: 3rem;
-  font: inherit;
-  transition: all .3s;
-  box-shadow: 5px 5px 10px #111;
-  border: none;
-  cursor: pointer;
+	padding: 1.5rem 3rem;
+	text-decoration: none;
+	color: var(--color-light-gold);
+	background: var(--color-main);
+	border-radius: 3rem;
+	font: inherit;
+	transition: all 0.3s;
+	box-shadow: 5px 5px 10px #111;
+	border: none;
+	cursor: pointer;
 }
 
 .button:hover {
-    background: var(--color-second);
-    box-shadow: 3px 3px 4px #000;
+	background: var(--color-second);
+	box-shadow: 3px 3px 4px #000;
+}
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) {
+    
+    .reservation {
+        padding: 9rem 5rem;
+    }
+
+	.title {
+		font-size: 3rem;
+	}
+
+	.text {
+		padding: 6rem 0;
+		font-size: 2rem;
+		line-height: 1.4;
+	}
 }

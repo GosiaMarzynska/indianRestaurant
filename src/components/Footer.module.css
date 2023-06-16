@@ -1,6 +1,6 @@
 .footer {
 	position: relative;
-	background:  url(/src/assets/background-pattern.png);
+	background: url(/src/assets/background-pattern.png);
 	color: var(--color-first);
 }
 .wrapper {
@@ -38,7 +38,7 @@
 }
 
 .box-link:hover {
-	color: darkslategray;
+	color: var(--color-second);
 }
 
 .bottom-text {
@@ -70,4 +70,48 @@
 .info-item:hover {
 	color: darkgray;
 	text-decoration: underline var(--color-second);
+}
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) {
+	.boxes {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.box-desktop {
+		display: block;
+	}
+
+	.box {
+		margin: 0 2em;
+		width: 25%;
+	}
+	.box:first-child {
+		width: 50%;
+	}
+
+	.box-title {
+		font-size: 2.2rem;
+		margin-bottom: 1em;
+	}
+
+	.box-list {
+		list-style: none;
+		font-size: 2rem;
+	}
+
+	.box-list-item {
+		margin-bottom: 1em;
+	}
+	.box-list-item a {
+		transition: color 0.3s;
+		color: var(--color-main);
+		text-decoration: none;
+	}
+
+	.box-list-item a:hover {
+		color: var(--color-second);
+	}
 }

@@ -33,10 +33,10 @@ export default function Footer() {
 						<h3 className={classes['box-title']}>O nas</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
-								<a href='#'>Historia</a>
+								<a href='#about-us'>Restauracja</a>
 							</li>
 							<li className={classes['box-list-item']}>
-								<a href='#'>Kuchnia</a>
+								<a href='#about-us'>Kuchnia</a>
 							</li>
 							<li className={classes['box-list-item']}>
 								<a href='#'>Opinie</a>
@@ -44,11 +44,12 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div className={`${classes.box} ${classes['box-desktop']}`}>
-						<h3 className={classes['box-title']}>Nasza Firma</h3>
+						<h3 className={classes['box-title']}>Restauracja</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
-								<a href='#'>O nas</a>
+								<a href='#about-us'>O nas</a>
 							</li>
+
 							<li className={classes['box-list-item']}>
 								<a href='#'>Firma</a>
 							</li>

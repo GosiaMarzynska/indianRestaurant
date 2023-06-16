@@ -22,3 +22,10 @@
 .category-button:hover{
     color: var(--color-second);
 }
+
+
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 768px) { 
+    
+}
