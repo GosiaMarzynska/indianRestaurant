@@ -1,10 +1,36 @@
 import { Link } from 'react-router-dom';
 import classes from './Navigation.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CartButton from '../../components/Cart/CartButton';
 
 export default function Navigation() {
 	const [isActive, setIsActive] = useState(false);
+	const [show, setShow] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const controlNavbar = () => {
+		if (typeof window !== 'undefined') {
+			if (window.scrollY > lastScrollY) {
+				setShow(false);
+			} else {
+				setShow(true);
+			}
+
+			setLastScrollY(window.scrollY);
+		}
+	};
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			window.addEventListener('scroll', controlNavbar);
+
+			return () => {
+				window.removeEventListener('scroll', controlNavbar);
+			};
+		}
+	}, [lastScrollY]);
+
+	let navBarClasses = show ? `${classes['nav-desktop']} ${classes.hidden}` : classes['nav-desktop'];
 
 	const openNavWindow = () => {
 		setIsActive(prev => !prev);
@@ -13,27 +39,6 @@ export default function Navigation() {
 	const closeNavWindow = () => {
 		setIsActive(false);
 	};
-
-	// allNavItems.forEach(item => {
-	//     item.addEventListener('click', () => {
-	//         navMobile.classList.remove('nav-mobile--active');
-	//     });
-	// });
-
-	// const handleObserver = () => {
-	//     const currentSection = window.scrollY;
-	//     console.log('Scroll Y:' + currentSection);
-	//     console.log(allSection);
-	//     allSection.forEach(section => {
-	//         if (section.classList.contains('color-section') && section.offsetTop <= currentSection + 50) {
-	//             navBtnBars.classList.add('white-bars-color');
-	//         } else if (!section.classList.contains('color-section') && section.offsetTop <= currentSection + 50) {
-	//             navBtnBars.classList.remove('white-bars-color');
-
-	//         }
-	//     });
-
-	// window.addEventListener('scroll', handleObserver);
 
 	return (
 		<nav className={`${classes['nav-container']} ${classes.section}`}>
@@ -47,6 +52,7 @@ export default function Navigation() {
 			<div
 				className={classes['nav-mobile']}
 				style={isActive ? { transform: 'translateX(0)' } : { transform: 'translateX(-102%)' }}>
+				<img className={classes.logo} src='src\assets\logo\logo-small.png' alt='logo restauracji' />
 				<Link to='/' className={classes['nav-link']} onClick={closeNavWindow}>
 					Home
 				</Link>
@@ -61,7 +67,8 @@ export default function Navigation() {
 				</Link>
 			</div>
 
-			<div className={classes['nav-desktop']}>
+			<div className={navBarClasses}>
+				<img className={classes['nav-logo']} src='src\assets\logo\logo-small.png' alt='logo restauracji' />
 				<Link to='/' className={classes['nav-item']}>
 					Home
 				</Link>

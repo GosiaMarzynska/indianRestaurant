@@ -7,48 +7,29 @@
 
 .logo {
 	position: absolute;
-	width: 80%;
+	width: 70%;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
 .hidden-title {
-	width: 1px;
+	width: 0;
 	font-size: 1px;
 }
-.phone {
-	position: absolute;
-	bottom: 120px;
-	left: 50%;
-	transform: translateX(-50%);
-	text-shadow: 3px 3px 5px #111;
-	font-size: 20px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	color: var(--color-gold);
-	white-space: nowrap;
-}
-.arrow {
-	position: absolute;
-	bottom: 30px;
-	font-size: 3.6rem;
-	color: var(--color-gold-dark);
-	transform: translateX(-50%);
-	transition: all 0.3s;
-	text-decoration: none;
-	text-shadow: 3px 3px 5px #111;
-	opacity: 0.8;
+
+.info {
+	display: none;
 }
 
-.arrow:active,
-.arrow:hover {
-	color: var(--color-gold);
-	text-shadow: 2px 2px 5px #111;
-	opacity: 1;
+@media (min-width: 500px) {
+	.logo {
+		width: auto;
+		height: 90%;
+	}
 }
-@media (min-width: 300px) {
-    .logo {
-      width: 240px;
-      
-    }
-  }
+
+@media (min-width: 992px) {
+	.background {
+		height: 40vh;
+	}
+}

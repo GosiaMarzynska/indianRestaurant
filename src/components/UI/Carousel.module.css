@@ -1,0 +1,49 @@
+.carousel {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	.carousel {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.arrow {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		font-size: 45px;
+		color: var(--color-gold);
+		z-index: 1;
+		cursor: pointer;
+		transition: color 0.3s;
+	}
+
+	.arrow:hover {
+		color: var(--color-light-gold);
+	}
+
+	.arrow-left {
+		left: 32px;
+	}
+
+	.arrow-right {
+		right: 32px;
+	}
+
+	.slides-container {
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.dots-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.dot {
+		margin: 0 3px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+}
