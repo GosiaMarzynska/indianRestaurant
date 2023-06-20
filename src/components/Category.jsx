@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MealItem from './MealItem';
-import classes from './Category.module.css';
+import classes from './Category.module.css'
 
 export default function Category({ mealsData }) {
 	const [activeMeal, setActiveMeal] = useState(null);

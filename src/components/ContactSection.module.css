@@ -20,6 +20,7 @@
 .title {
 	padding-bottom: 2rem;
 	font-size: 2.8rem;
+	text-transform: uppercase;
 }
 
 .contact-item {
@@ -44,3 +45,24 @@
 		padding: 3rem 5rem;
 	}
 }
+
+@media (min-width: 992px) {
+	.contact {
+		padding: 4rem 10rem;
+	}
+
+	.title {
+
+		font-size: 3.2rem;
+	}
+
+	
+.contact-item {
+	white-space: nowrap;
+	padding-top: 3rem;
+	font-size: 2.4rem;
+}
+
+	
+}
+

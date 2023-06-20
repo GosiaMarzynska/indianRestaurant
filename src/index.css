@@ -16,9 +16,9 @@
   --color-gold: #E1C373;
   --color-gold-dark: #b5a16a; 
   --color-light-gold: #f3e8cd;
-  --color-main: #4D2C3A; 
+  --color-main: #553140; 
   --color-main-light: #f6dfe8; 
-  --color-second:#3c242e;
+  --color-second:#301d25;
   --color-first: rgb(18, 3, 39);
   --color-gray: #575757;
   --color-gray-light: #828282;
@@ -34,7 +34,7 @@ html {
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
 	background-color: white;
 }

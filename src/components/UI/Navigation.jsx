@@ -5,12 +5,14 @@ import CartButton from '../../components/Cart/CartButton';
 
 export default function Navigation() {
 	const [isActive, setIsActive] = useState(false);
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(false);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
 	const controlNavbar = () => {
 		if (typeof window !== 'undefined') {
-			if (window.scrollY > lastScrollY) {
+			if (window.scrollY < 80) {
+				setShow(false);
+			} else if (window.scrollY > lastScrollY) {
 				setShow(false);
 			} else {
 				setShow(true);

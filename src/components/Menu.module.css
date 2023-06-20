@@ -1,31 +1,49 @@
 .menu-items {
-    display: none;
+	display: none;
 }
 
 .active {
-    display: block;
+	display: block;
 }
 
-.category-button{
-    width: 80%;
-    padding: 2rem;
-    background: none;
-    color: var(--color-main);
-    text-transform: uppercase;
-    font-size: 2.2rem;
-    font-weight: bold;
-    border: none;
-    border-bottom: solid 1px #bbb
-
+.category-button {
+	width: 80%;
+	padding: 2rem;
+	background: none;
+	color: var(--color-main);
+	text-transform: uppercase;
+	font-size: 2.2rem;
+	font-weight: bold;
+	border: none;
+	border-bottom: solid 1px #bbb;
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
-.category-button:hover{
-    color: var(--color-second);
+.category-button:hover {
+	color: var(--color-second);
+	text-shadow: 2px 2px 4px  white;
 }
-
 
 /* --------------- MEDIA ------------------------- */
 
-@media (min-width: 768px) { 
-    
+@media (min-width: 768px) {
+	.category-button {
+		width: 70%;
+	}
+}
+
+
+@media (min-width: 992px) {
+	.category-button {
+		width: 80%;
+		font-size: 2.8rem;
+	}
+	
+	.active-btn {
+		font-size: 3rem;
+		padding: 4rem 2rem 2rem;
+	}
+	
+	
 }

@@ -30,6 +30,12 @@
 
 @media (min-width: 992px) {
 	.background {
-		height: 40vh;
+		height: 60vh;
+	}
+
+	.logo {
+		width: auto;
+		height: 70%;
+		top: 60%;
 	}
 }

@@ -33,3 +33,17 @@
 		font-size: 56px;
 	}
 }
+
+
+@media (min-width: 992px) { 
+
+
+	.menu-section{
+		padding: 0rem 10rem;
+		height: 80vh;
+	}
+
+    .title {
+		font-size: 56px;
+	}
+}

@@ -37,13 +37,23 @@
 	}
 
 	.dots-container {
-		display: flex;
-		justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
 	}
 
 	.dot {
-		margin: 0 3px;
+		margin: 0 10px;
 		cursor: pointer;
-		font-size: 20px;
+		font-size: 40px;
+    color: var(--color-gold);
+    text-shadow: 0 0 5px var(--color-main);
+    transition: color 0.3s;
 	}
+
+  .dot:hover {
+    color: var(--color-light-gold);
+  }
 }

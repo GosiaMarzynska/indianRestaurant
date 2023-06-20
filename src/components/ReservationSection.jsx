@@ -10,7 +10,7 @@ export default function ReservationSection() {
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fugit impedit vero quaerat libero ullam similique
 				officia. Quidem vitae, ab assumenda repellat doloremque quisquam illo id non ratione dolore. Praesentium, esse?
 				Hic cumque quod iusto quasi incidunt magnam adipisci alias vero sint molestiae, quas labore optio tempora animi
-				voluptas ex?
+				voluptas ex? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fuga voluptatibus eligendi, ratione sapiente modi.
 			</p>
 			<Link to='/rezerwacje'>
 				<Button text='Zarezerwuj' />

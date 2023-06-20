@@ -2,20 +2,21 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import useDesktopViewport from '../../hooks/useDesktopViewport';
 import classes from './Carousel.module.css';
 
+
+const sliderStyles = {
+    position: 'relative',
+    height: '100%',
+    };
+
 const slideStyles = {
 	height: '100%',
 	backgroundSize: 'cover',
 	backgroundPosition: 'center',
 };
 
-const sliderStyles = {
-	position: 'relative',
-	height: '100%',
-	};
-
 const slidesContainerStyles = {
 	display: 'flex',
-	height: '60vh',
+	height: '67vh',
 	transition: 'transform ease-out 0.3s',
 };
 
@@ -94,9 +95,9 @@ export default function Carousel() {
 			</div>
 			<div className={classes['dots-container']}>
 				{slides.map((slide, slideIndex) => (
-					<div className={classes.dot} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
+					<span className={classes.dot} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
 						●
-					</div>
+					</span>
 				))}
 			</div>
 		</div>

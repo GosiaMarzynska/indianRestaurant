@@ -27,40 +27,48 @@ export default function Menu() {
 		setActiveCategory(category);
 	};
 
+	const getCategoryButtonStyles = (category) => {
+		if(activeCategory === category){
+			return `${classes['category-button']} ${classes['active-btn']}`;
+		}else return classes['category-button'];
+	}
+
+
+
 	return (
 		<Section title='menu'>
 			<div className={classes.meals}>
-				<button onClick={() => clickHandler(STARTERS)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(STARTERS)} className={getCategoryButtonStyles(STARTERS)}>
 					Przystawki
 				</button>
 				{activeCategory === STARTERS && (
 					<Category mealsData={categoredMeals['Starters']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(CHICKEN)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(CHICKEN)} className={getCategoryButtonStyles(CHICKEN)}>
 					Dania z kurczaka
 				</button>
 				{activeCategory === CHICKEN && (
 					<Category mealsData={categoredMeals['Chicken Dishes']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(VEG)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(VEG)} className={getCategoryButtonStyles(VEG)}>
 					Dania Vegańskie
 				</button>
 				{activeCategory === VEG && (
 					<Category mealsData={categoredMeals['Vegan Dishes']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(BREADS)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(BREADS)} className={getCategoryButtonStyles(BREADS)}>
 					Indian Breads
 				</button>
 				{activeCategory === BREADS && (
 					<Category mealsData={categoredMeals['Indian Breads']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(DESSERTS)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(DESSERTS)} className={getCategoryButtonStyles(DESSERTS)}>
 					Desery
 				</button>
 				{activeCategory === DESSERTS && (
 					<Category mealsData={categoredMeals['Desserts']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(DRINKS)} className={classes['category-button']}>
+				<button onClick={() => clickHandler(DRINKS)} className={getCategoryButtonStyles(DRINKS)}>
 					Napoje
 				</button>
 				{activeCategory === DRINKS && (

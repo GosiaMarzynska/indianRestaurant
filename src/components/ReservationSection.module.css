@@ -55,3 +55,21 @@
 		line-height: 1.4;
 	}
 }
+
+
+@media (min-width: 992px) {
+    
+    .reservation {
+        padding: 9rem 10rem;
+    }
+
+	.title {
+		font-size: 3.2rem;
+	}
+
+	.text {
+		padding: 6rem 0;
+		font-size: 2.4rem;
+		line-height: 1.5;
+	}
+}

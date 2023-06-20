@@ -133,6 +133,27 @@
 		display: none;
 	}
 
+	.bar-container {
+		position: relative;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-around;
+		background-color: white;
+		z-index: 40;
+	}
+	.bar{
+		height: 8rem;
+		width: 100%;
+			top: 0px;
+			display: flex;
+		justify-content: start;
+		align-items: center;
+		background-color: #ffffff;
+		z-index: 40;
+		box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.5);
+	}
+
 	.nav-desktop {
 		height: 8rem;
 		width: 100%;
@@ -169,11 +190,13 @@
 		transition: background-color 0.5s, color 0.3s;
 	}
 	.nav-item:hover {
-		background-color: darkgray;
-		color: white;
+		background-color: var(--color-main);
+		color: var(--color-gold);
 	}
 
 	.nav-mobile {
 		display: none;
 	}
+
+
 }

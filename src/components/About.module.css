@@ -52,3 +52,19 @@
 		font-size: 2rem;
 	}
 }
+
+@media (min-width: 992px) {
+	.about {
+		position: relative;
+		padding: 10rem 10rem;
+	}
+
+    .title {
+		font-size: 3.2rem;
+	}
+    
+	.text {
+		padding-left: 8rem;
+		font-size: 2.4rem;
+	}
+}

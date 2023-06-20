@@ -1,7 +1,7 @@
 .footer {
 	position: relative;
 	background: url(/src/assets/background-pattern.png);
-	color: var(--color-first);
+	color: var(--color-second);
 }
 .wrapper {
 	padding: 6em 2em 2em;
@@ -113,5 +113,11 @@
 
 	.box-list-item a:hover {
 		color: var(--color-second);
+	}
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		padding: 6em 10rem 2em;
 	}
 }

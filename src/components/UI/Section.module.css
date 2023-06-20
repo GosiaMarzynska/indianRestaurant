@@ -12,3 +12,11 @@
     padding: 3rem 0 4rem;
     font-size: 2.8rem;
 }
+
+@media (min-width: 992px) {
+    .title{
+        padding: 4rem 0 6rem;
+        font-size: 3.2rem;
+    }
+}
+
