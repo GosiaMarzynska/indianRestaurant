@@ -12,13 +12,17 @@
 	background-attachment: fixed;
 }
 
-.title {
+.title-small {
     padding: 100px 0;
     font-size: 48px;
     text-transform: uppercase;
     color: var(--color-light-gold);
     border: 3px solid;
     text-decoration: none;
+}
+
+.title-big {
+	display: none;
 }
 
 
@@ -29,7 +33,7 @@
 		padding: 3rem 5rem;
 	}
 
-    .title {
+    .title-big {
 		font-size: 56px;
 	}
 }
@@ -43,7 +47,17 @@
 		height: 80vh;
 	}
 
-    .title {
-		font-size: 56px;
+    .title-small {
+		display: none;
+	}
+
+	.title-big {
+		display: block;
+		padding: 100px 0;
+		text-transform: uppercase;
+		color: var(--color-light-gold);
+		border: 3px solid;
+		text-decoration: none;
+		font-size: 60px;
 	}
 }

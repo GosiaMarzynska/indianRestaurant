@@ -22,8 +22,8 @@ const slidesContainerStyles = {
 
 
 export default function Carousel() {
-	const { width } = useDesktopViewport();
-
+	const  width  = useDesktopViewport();
+console.log(width);
 	const timerRef = useRef(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const sliderWidth = width;
