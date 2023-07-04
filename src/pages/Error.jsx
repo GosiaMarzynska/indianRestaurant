@@ -1,32 +1,36 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError } from 'react-router-dom';
+import Navigation from '../components/UI/Navigation';
+import Header from '../components/Header';
+import PageContent from '../components/PageGontent';
+import ErrorSection from '../components/ErrrorSection';
+import { useSelector } from 'react-redux';
+import Cart from '../components/Cart/Cart';
 
-import PageContent from "../components/PageGontent";
+export default function ErrorPage() {
+	const error = useRouteError();
+   	const showCart = useSelector(state => state.ui.cartIsVisible);
 
-export default function ErrorPage(){
+	let title = 'Błąd';
 
-    const error = useRouteError();
+	let message = 'Coś poszło nie tak!';
 
+	if (error.status === 500) {
+		message = error.data.message;
+	}
 
-    let title = "An error occureed!";
-    
-    let message = 'Something went wrong!'
+	if (error.status === 404) {
+		title = 'Błąd 404';
+		message = 'Strona o danym adresie nie istnieje';
+	}
 
-    if(error.status === 500) {
-        message = error.data.message;
-    }
-
-    if(error.status === 404) {
-        title = 'Not found!'
-        message = 'Could not find resource or page';
-    }
-
-
-
-    return <>
-  
-    <PageContent title={title}>
-    <p>{message}!</p>
-    </PageContent>
-    
-    </>
+	return (
+		<>
+			<Navigation />
+            {showCart && <Cart />}
+			<PageContent>
+				<Header />
+			<ErrorSection message={message} title={title}/>
+			</PageContent>
+		</>
+	);
 }
