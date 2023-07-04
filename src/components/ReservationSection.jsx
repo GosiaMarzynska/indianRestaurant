@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Button from '../components/UI/Button';
 import classes from './ReservationSection.module.css';
 
@@ -12,9 +12,9 @@ export default function ReservationSection() {
 				Hic cumque quod iusto quasi incidunt magnam adipisci alias vero sint molestiae, quas labore optio tempora animi
 				voluptas ex? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fuga voluptatibus eligendi, ratione sapiente modi.
 			</p>
-			<Link to='/rezerwacje'>
+			<HashLink to='/rezerwacje#rezerwacje'>
 				<Button text='Zarezerwuj' />
-			</Link>
+			</HashLink>
 		</section>
 	);
 }

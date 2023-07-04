@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding: 4em 2em;
+	padding: 4em 0em;
 	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.598)), url('src/assets/restaurant.jpg');
 	background-size: cover;
 	background-position: center;
@@ -13,7 +13,7 @@
 .contact-box {
 	padding: 60px 0;
 	color: var(--color-light-gold);
-	border: 3px solid;
+	border: none;
 	text-decoration: none;
 }
 
@@ -22,6 +22,7 @@
 	font-size: 2.8rem;
 	text-transform: uppercase;
 }
+
 
 .contact-item {
 	white-space: nowrap;
@@ -40,9 +41,24 @@
 
 /* --------------- MEDIA ------------------------- */
 
+
+@media (min-width: 350px) {
+	.contact {
+		padding: 4em 2em;
+	}
+
+	.contact-box {
+		padding: 60px 0;
+		color: var(--color-light-gold);
+		border: 3px solid;
+		text-decoration: none;
+	}
+	
+}
+
 @media (min-width: 768px) {
 	.contact {
-		padding: 3rem 5rem;
+		padding: 5rem;
 	}
 }
 
@@ -52,17 +68,18 @@
 	}
 
 	.title {
-
 		font-size: 3.2rem;
 	}
 
-	
-.contact-item {
-	white-space: nowrap;
-	padding-top: 3rem;
-	font-size: 2.4rem;
+	.contact-item {
+		white-space: nowrap;
+		padding-top: 3rem;
+		font-size: 2.4rem;
+	}
 }
 
-	
+@media (min-width: 1200px) {
+	.contact {
+		padding: 4rem 15%;
+	}
 }
-

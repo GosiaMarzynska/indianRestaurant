@@ -69,7 +69,13 @@
 
 	.text {
 		padding: 6rem 0;
-		font-size: 2.4rem;
+		font-size: 2.2rem;
 		line-height: 1.5;
+	}
+}
+
+@media (min-width: 1200px) {
+	.reservation{
+		padding: 9rem 15%;
 	}
 }

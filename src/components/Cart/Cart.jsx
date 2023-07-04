@@ -3,7 +3,7 @@ import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import Modal from '../UI/Modal';
 import { uiActions } from '../../store/ui-slice';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Cart = () => {
 	const productsArray = useSelector(state => state.cart.items);
@@ -35,11 +35,11 @@ const Cart = () => {
 				Zamknij
 			</button>
 			{hasItems && (
-				<Link to='/zamowienie'>
+				<HashLink to='/zamowienie#zamowienie'>
 					<button onClick={closeModal} className={classes.button}>
 						Zamów
 					</button>
-				</Link>
+				</HashLink>
 			)}
 		</div>
 	);

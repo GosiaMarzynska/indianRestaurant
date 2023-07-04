@@ -4,7 +4,7 @@ import ReservaionForm from './ReservationForm';
 
 export default function Reservation() {
 	return (
-		<Section title='Rezerwacja'>
+		<Section title='Rezerwacja' sectionId='rezerwacje'>
 			<ReservaionForm />
 		</Section>
 	);

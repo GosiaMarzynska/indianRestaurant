@@ -2,11 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import useDesktopViewport from '../../hooks/useDesktopViewport';
 import classes from './Carousel.module.css';
 
-
 const sliderStyles = {
-    position: 'relative',
-    height: '100%',
-    };
+	position: 'relative',
+	height: '100%',
+};
 
 const slideStyles = {
 	height: '100%',
@@ -20,10 +19,8 @@ const slidesContainerStyles = {
 	transition: 'transform ease-out 0.3s',
 };
 
-
 export default function Carousel() {
-	const  width  = useDesktopViewport();
-console.log(width);
+	const width = useDesktopViewport();
 	const timerRef = useRef(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const sliderWidth = width;
@@ -80,13 +77,13 @@ console.log(width);
 		<div className={classes.carousel} style={getSliderStyles()}>
 			<div>
 				<div onClick={goToPrevious} className={`${classes.arrow} ${classes['arrow-left']}`}>
-                <i className='fa-sharp fa-solid fa-circle-chevron-left'></i>
+					<i className='fa-sharp fa-solid fa-circle-chevron-left'></i>
 				</div>
 				<div onClick={goToNext} className={`${classes.arrow} ${classes['arrow-right']}`}>
-                <i className='fa-sharp fa-solid fa-circle-chevron-right'></i>
+					<i className='fa-sharp fa-solid fa-circle-chevron-right'></i>
 				</div>
 			</div>
-			<div className={classes['slides-container']} >
+			<div className={classes['slides-container']}>
 				<div style={getSlidesContainerStylesWithWidth()}>
 					{slides.map((_, slideIndex) => (
 						<div key={slideIndex} style={getSlideStylesWithBackground(slideIndex)}></div>

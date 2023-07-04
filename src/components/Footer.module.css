@@ -121,3 +121,9 @@
 		padding: 6em 10rem 2em;
 	}
 }
+
+@media (min-width: 1200px) {
+	.wrapper {
+		padding: 6em 15% 2em;
+	}
+}

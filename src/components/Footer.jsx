@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import classes from './Footer.module.css';
 
 export default function Footer() {
@@ -33,10 +34,10 @@ export default function Footer() {
 						<h3 className={classes['box-title']}>O nas</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
-								<a href='#about-us'>Restauracja</a>
+								<HashLink to='/#about-us'>Restauracja</HashLink>
 							</li>
 							<li className={classes['box-list-item']}>
-								<a href='#about-us'>Kuchnia</a>
+								<HashLink to='/#about-us'>Kuchnia</HashLink>
 							</li>
 							<li className={classes['box-list-item']}>
 								<a href='#'>Opinie</a>
@@ -47,7 +48,7 @@ export default function Footer() {
 						<h3 className={classes['box-title']}>Restauracja</h3>
 						<ul className={classes['box-list']}>
 							<li className={classes['box-list-item']}>
-								<a href='#about-us'>O nas</a>
+								<HashLink to='/#about-us' smooth>O nas</HashLink>
 							</li>
 
 							<li className={classes['box-list-item']}>

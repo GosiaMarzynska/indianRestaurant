@@ -3,11 +3,12 @@
 	height: 50vh;
 	width: 100%;
 	background: linear-gradient(90deg, var(--color-first) 0%, var(--color-second) 100%);
+	overflow: hidden;
 }
 
 .logo {
 	position: absolute;
-	width: 70%;
+	height: 90%;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -23,7 +24,7 @@
 
 @media (min-width: 500px) {
 	.logo {
-		width: auto;
+		
 		height: 90%;
 	}
 }
@@ -35,7 +36,7 @@
 
 	.logo {
 		width: auto;
-		height: 70%;
-		top: 60%;
+		height: 90%;
+		top: 58%;
 	}
 }

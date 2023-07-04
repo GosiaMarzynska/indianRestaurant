@@ -8,19 +8,16 @@ import Carousel from '../components/UI/Carousel';
 import Header from '../components/Header';
 import useDesktopViewport from '../hooks/useDesktopViewport';
 
-
 export default function HomePage() {
-	const { width } = useDesktopViewport();
-	
-	
+	const width = useDesktopViewport();
 
 	return (
 		<PageContent>
-			{width < 992 ? <HeaderMain /> : <Header/>}
+			{width < 992 ? <HeaderMain /> : <Header />}
 			<Carousel />
 			<About />
 			<MenuSection />
-            <Reservation/>
+			<Reservation />
 		</PageContent>
 	);
 }

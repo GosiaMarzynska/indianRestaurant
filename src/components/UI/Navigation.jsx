@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import classes from './Navigation.module.css';
 import { useState, useEffect } from 'react';
 import CartButton from '../../components/Cart/CartButton';
+
 
 export default function Navigation() {
 	const [isActive, setIsActive] = useState(false);
@@ -42,6 +44,7 @@ export default function Navigation() {
 		setIsActive(false);
 	};
 
+
 	return (
 		<nav className={`${classes['nav-container']} ${classes.section}`}>
 			<CartButton />
@@ -58,15 +61,15 @@ export default function Navigation() {
 				<Link to='/' className={classes['nav-link']} onClick={closeNavWindow}>
 					Home
 				</Link>
-				<Link to='/menu' className={classes['nav-link']} onClick={closeNavWindow}>
+				<HashLink to='/menu#menu' className={classes['nav-link']} onClick={closeNavWindow}>
 					Menu
-				</Link>
-				<Link to='/rezerwacje' className={classes['nav-link']} onClick={closeNavWindow}>
+				</HashLink>
+				<HashLink to='/rezerwacje#rezerwacje' className={classes['nav-link']} onClick={closeNavWindow}>
 					Rezerwacje
-				</Link>
-				<Link to='/kontakt' className={classes['nav-link']} onClick={closeNavWindow}>
+				</HashLink>
+				<HashLink to='/kontakt#kontakt' className={classes['nav-link']} onClick={closeNavWindow}>
 					Kontakt
-				</Link>
+				</HashLink>
 			</div>
 
 			<div className={navBarClasses}>
@@ -74,15 +77,15 @@ export default function Navigation() {
 				<Link to='/' className={classes['nav-item']}>
 					Home
 				</Link>
-				<Link to='/menu' className={classes['nav-item']}>
+				<HashLink to='/menu#menu' className={classes['nav-item']}>
 					Menu
-				</Link>
-				<Link to='/rezerwacje' className={classes['nav-item']}>
+				</HashLink>
+				<HashLink to='/rezerwacje#rezerwacje' className={classes['nav-item']}>
 					Rezerwacje
-				</Link>
-				<Link to='/kontakt' className={classes['nav-item']}>
+				</HashLink>
+				<HashLink to='/kontakt#kontakt' className={classes['nav-item']}>
 					Kontakt
-				</Link>
+				</HashLink>
 			</div>
 		</nav>
 	);

@@ -1,8 +1,12 @@
 import Button from '../UI/Button';
 import useInput from '../../hooks/useInput';
 import classes from './Checkout.module.css';
+import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Checkout(props) {
+	const navigate = useNavigate();
+
 	const {
 		value: nameInput,
 		isValid: nameIsValid,
@@ -93,6 +97,7 @@ export default function Checkout(props) {
 		});
 
 		inputsReset();
+		// navigate('/menu#menu');
 	};
 
 	const nameClasses = nameIsInvalid ? `${classes['form-control']} ${classes.invalid}` : classes['form-control'];
@@ -105,7 +110,7 @@ export default function Checkout(props) {
 
 	return (
 		<>
-		<h2 className={classes.title}>DANE OSOBOWE:</h2>
+			<h2 className={classes.title}>DANE OSOBOWE:</h2>
 			<form onSubmit={confirmHandler}>
 				<div className={classes['control-group']}>
 					<div className={nameClasses}>
@@ -175,7 +180,7 @@ export default function Checkout(props) {
 					</div>
 				</div>
 				<div className='form-actions'>
-					<Button disabled={!formIsValid} text='Prześlij' />
+					<Button disabled={!formIsValid} text='Zamów' />
 				</div>
 			</form>
 		</>

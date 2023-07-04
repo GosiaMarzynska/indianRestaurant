@@ -9,13 +9,15 @@
 	background-attachment: fixed;
 }
 
-.contact-box {	
-	text-decoration: none;
-}
 
 .title {
-	padding-bottom: 2rem;
+	padding: 6rem 0 2rem;
 	font-size: 2.8rem;
+}
+
+.text {
+	margin-left: 20%;
+	text-align: left;
 }
 
 .contact-item {
@@ -34,9 +36,19 @@
 }
 
 
-.title{ 
-	padding: 6rem 0;
+
+.hours-list {
+	margin-left: 20%;
+	font-size: 2rem;
+	list-style: none;
+	line-height: 34px;
+	text-align: left;
 }
+
+.hours {
+	padding-left: 2rem;
+}
+
 .mapouter {
 	position: relative;
 	text-align: right;
@@ -50,3 +62,67 @@
 	width: 100%;
 }
 
+/* --------------- MEDIA ------------------------- */
+
+@media (min-width: 520px) {
+	.text,
+	.hours-list {
+		margin-left: 35%;
+	}
+}
+
+@media (min-width: 768px) {
+	.title {
+		padding-bottom: 2.2rem;
+		font-size: 2.8rem;
+	}
+
+	.contact-item {
+		white-space: nowrap;
+		padding-top: 2.2rem;
+		font-size: 2.2rem;
+	}
+}
+
+@media (min-width: 992px) {
+
+	.text,
+	.hours-list {
+		margin-left: 0;
+	}
+	
+	
+	.contact-box, .hours-container {		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	
+	}
+
+
+	.wrapper {	
+		padding:0 15%;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.contact-item {
+		white-space: nowrap;
+		padding-top: 2.2rem;
+		font-size: 2.2rem;
+		text-align: left;
+		padding-left: 4rem;
+	}
+
+	.mapouter {
+		position: relative;
+		text-align: center;
+		border: solid 15px white;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 50%;
+		width: 70%;
+	}
+}

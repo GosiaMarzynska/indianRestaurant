@@ -1,69 +1,97 @@
 .item {
-  margin: 1rem 0;
-  border-bottom: 1px solid #ddd;
+	margin: 1rem 0;
+	border-bottom: 1px solid #ddd;
 }
 
-
 .name {
-  font-size: 1.75rem;
-  text-transform: uppercase;
-
+	font-size: 1.75rem;
+	text-transform: uppercase;
 }
 
 .item header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
 }
-
-
 
 .details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.75rem;  
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.75rem;
 }
 
-.quantity  {
-  margin-left: 1rem;
-  font-weight: bold;
-  text-transform: lowerCase;
+.quantity {
+	margin-left: 1rem;
+	font-weight: bold;
+	text-transform: lowerCase;
 }
 
 .price {
-  font-size: 1.5rem;
-  font-weight: bold;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .itemprice {
-  font-weight: normal;
-  font-size: 1rem;
-  font-style: italic;
+	font-weight: normal;
+	font-size: 1.2rem;
+	font-style: italic;
+	text-transform: none;
 }
 
 .actions {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0.5rem 0;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0.5rem 0;
 }
 
 .actions button {
-  width: 3.6rem;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  font-size: 2.5rem;
-  margin-left: 0.5rem;
-  padding: 0.15rem 1rem;
-  transition: all 0.3s;
-
- 
+	width: 3.6rem;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	font-size: 2.5rem;
+	margin-left: 0.5rem;
+	padding: 0.15rem 1rem;
+	transition: all 0.3s;
 }
 
 .actions button:hover,
 .actions button:active {
+	background-color: var(--color-light-gold);
+}
 
-  background-color: var(--color-light-gold);
-  
+@media (min-width: 768px) {
+	.name {
+		font-size: 2rem;
+	}
+
+	.price {
+		font-size: 1.8rem;
+	}
+
+	.itemprice {
+		font-size: 1.5rem;
+	}
+	.details {
+		font-size: 2rem;
+	}
+}
+
+
+@media (min-width: 992px) {
+	.name {
+		font-size: 2.4rem;
+	}
+
+	.price {
+		font-size: 2.2rem;
+	}
+
+	.itemprice {
+		font-size: 2rem;
+	}
+	.details {
+		font-size: 2.2rem;
+	}
 }

@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import Category from './Category';
 import classes from './Menu.module.css';
 import Section from '../components/UI/Section';
@@ -27,50 +28,74 @@ export default function Menu() {
 		setActiveCategory(category);
 	};
 
-	const getCategoryButtonStyles = (category) => {
-		if(activeCategory === category){
+	const getCategoryButtonStyles = category => {
+		if (activeCategory === category) {
 			return `${classes['category-button']} ${classes['active-btn']}`;
-		}else return classes['category-button'];
-	}
-
-
+		} else return classes['category-button'];
+	};
 
 	return (
-		<Section title='menu'>
+		<Section title='menu' sectionId='menu'>
 			<div className={classes.meals}>
-				<button onClick={() => clickHandler(STARTERS)} className={getCategoryButtonStyles(STARTERS)}>
+			<div className={classes['category-link']} id='starters' name='starters'/>
+				<HashLink
+					to='#starters'
+					onClick={() => clickHandler(STARTERS)}
+					className={getCategoryButtonStyles(STARTERS)}
+					>
 					Przystawki
-				</button>
+				</HashLink>				
 				{activeCategory === STARTERS && (
 					<Category mealsData={categoredMeals['Starters']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(CHICKEN)} className={getCategoryButtonStyles(CHICKEN)}>
+				<div className={classes['category-link']} id='chicken' name='chicken'/>
+				<HashLink
+					to='#chicken'
+					onClick={() => clickHandler(CHICKEN)}
+					className={getCategoryButtonStyles(CHICKEN)}
+					>
 					Dania z kurczaka
-				</button>
+				</HashLink>
 				{activeCategory === CHICKEN && (
 					<Category mealsData={categoredMeals['Chicken Dishes']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(VEG)} className={getCategoryButtonStyles(VEG)}>
+				<div className={classes['category-link']} id='veg' name='veg'/>
+				<HashLink to='#veg' onClick={() => clickHandler(VEG)} className={getCategoryButtonStyles(VEG)}>
 					Dania Vegańskie
-				</button>
+				</HashLink>
 				{activeCategory === VEG && (
 					<Category mealsData={categoredMeals['Vegan Dishes']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(BREADS)} className={getCategoryButtonStyles(BREADS)}>
+				<div className={classes['category-link']} id='breads' name='breads'/>
+				<HashLink
+					to='#breads'
+					onClick={() => clickHandler(BREADS)}
+					className={getCategoryButtonStyles(BREADS)}
+					>
 					Indian Breads
-				</button>
+				</HashLink>
 				{activeCategory === BREADS && (
 					<Category mealsData={categoredMeals['Indian Breads']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(DESSERTS)} className={getCategoryButtonStyles(DESSERTS)}>
+				<div className={classes['category-link']} id='desserts' name='desserts'/>
+				<HashLink
+					to='#desserts'
+					onClick={() => clickHandler(DESSERTS)}
+					className={getCategoryButtonStyles(DESSERTS)}
+					>
 					Desery
-				</button>
+				</HashLink>
 				{activeCategory === DESSERTS && (
 					<Category mealsData={categoredMeals['Desserts']} className={classes[`menu-items`]} />
 				)}
-				<button onClick={() => clickHandler(DRINKS)} className={getCategoryButtonStyles(DRINKS)}>
+				<div className={classes['category-link']} id='drinks' name='drinks'/>
+				<HashLink
+					to='#drinks'
+					onClick={() => clickHandler(DRINKS)}
+					className={getCategoryButtonStyles(DRINKS)}
+					>
 					Napoje
-				</button>
+				</HashLink>
 				{activeCategory === DRINKS && (
 					<Category mealsData={categoredMeals['Drinks']} className={classes[`menu-items`]} />
 				)}

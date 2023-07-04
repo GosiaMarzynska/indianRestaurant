@@ -126,7 +126,7 @@
 
 	.nav-logo {
 		padding: 0 6rem; 
-		height: 60px;
+		height: 40px;
 	}
 
 	.burger-btn {
@@ -155,7 +155,7 @@
 	}
 
 	.nav-desktop {
-		height: 8rem;
+		height: 6rem;
 		width: 100%;
 		position: fixed;
 		top: 0px;
