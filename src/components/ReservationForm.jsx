@@ -72,7 +72,6 @@ export default function ReservaionForm() {
 		if (!formIsValid) {
 			return;
 		}
-
 		console.log(`Name: ${nameInput}
              Email: ${emailInput}
              Phone: ${phoneInput}
@@ -151,7 +150,7 @@ export default function ReservaionForm() {
 			</div>
 
 			<div className={classes['form-actions']}>
-				<Button text='Prześlij' disabled={!formIsValid}/>
+				<Button text='Prześlij' disabled={!formIsValid} />
 			</div>
 		</form>
 	);

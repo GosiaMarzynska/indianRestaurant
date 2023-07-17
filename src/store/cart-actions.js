@@ -3,8 +3,6 @@ import { cartActions } from './cart-slice';
 
 const URL = 'https://react-deployment-demo-b053a-default-rtdb.europe-west1.firebasedatabase.app/cart.json';
 
-
-
 export const fetchCartData = () => {
 	return async dispatch => {
 		const fetchData = async () => {
@@ -51,7 +49,6 @@ export const sendCartData = cart => {
 		);
 
 		const sendRequest = async () => {
-			console.log('Putting ' + JSON.stringify(cart))
 			const response = await fetch(URL, {
 				method: 'PUT',
 				body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity, finalPrice: cart.finalPrice }),
