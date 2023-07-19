@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
 import About from '../components/About';
 import HeaderMain from '../components/HeaderMain';
 import MenuSection from '../components/MenuSection';
-import PageContent from '../components/PageGontent';
+import PageContent from '../components/PageContent';
 import Reservation from '../components/ReservationSection';
 import Carousel from '../components/UI/Carousel';
 import Header from '../components/Header';

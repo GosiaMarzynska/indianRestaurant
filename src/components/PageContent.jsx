@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './PageContent.module.css';
 import Footer from './Footer';
 import Contact from './ContactSection';

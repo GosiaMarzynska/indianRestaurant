@@ -1,5 +1,5 @@
+import React from 'react';
 import Section from '../components/UI/Section';
-import classes from './Reservation.module.css';
 import ReservaionForm from './ReservationForm';
 
 export default function Reservation() {

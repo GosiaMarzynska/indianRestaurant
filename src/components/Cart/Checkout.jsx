@@ -1,12 +1,10 @@
+import React from 'react';
 import Button from '../UI/Button';
 import useInput from '../../hooks/useInput';
 import classes from './Checkout.module.css';
-import { useNavigate } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+
 
 export default function Checkout(props) {
-	const navigate = useNavigate();
-
 	const {
 		value: nameInput,
 		isValid: nameIsValid,
@@ -152,7 +150,7 @@ export default function Checkout(props) {
 					<div className={emailClasses}>
 						<label htmlFor='email'>E-Mail</label>
 						<input type='email' id='email' onBlur={emailBlurHandler} onChange={emailChangeHandler} value={emailInput} />
-						{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać "@" and "."</p>}
+						{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać &quot;@&quot; and &quot;.&quot;</p>}
 					</div>
 
 					<div className={phoneClasses}>

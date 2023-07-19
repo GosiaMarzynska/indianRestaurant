@@ -1,14 +1,15 @@
+import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import Navigation from '../components/UI/Navigation';
 import Header from '../components/Header';
-import PageContent from '../components/PageGontent';
+import PageContent from '../components/PageContent';
 import ErrorSection from '../components/ErrrorSection';
 import { useSelector } from 'react-redux';
 import Cart from '../components/Cart/Cart';
 
 export default function ErrorPage() {
 	const error = useRouteError();
-   	const showCart = useSelector(state => state.ui.cartIsVisible);
+	const showCart = useSelector(state => state.ui.cartIsVisible);
 
 	let title = 'Błąd';
 
@@ -26,10 +27,10 @@ export default function ErrorPage() {
 	return (
 		<>
 			<Navigation />
-            {showCart && <Cart />}
+			{showCart && <Cart />}
 			<PageContent>
 				<Header />
-			<ErrorSection message={message} title={title}/>
+				<ErrorSection message={message} title={title} />
 			</PageContent>
 		</>
 	);

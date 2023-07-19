@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from '../components/UI/Button';
 import useInput from '../hooks/useInput';
 import classes from './ReservationForm.module.css';
@@ -99,7 +100,7 @@ export default function ReservaionForm() {
 				<div className={emailClasses}>
 					<label htmlFor='email'>E-Mail</label>
 					<input type='email' id='email' onBlur={emailBlurHandler} onChange={emailChangeHandler} value={emailInput} />
-					{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać "@" and "."</p>}
+					{emailIsInvalid && <p className={classes['error-text']}>Email musi zawierać &quot@&quot and &quot.&quot</p>}
 				</div>
 
 				<div className={phoneClasses}>

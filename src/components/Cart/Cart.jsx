@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';

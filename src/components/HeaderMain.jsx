@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './HeaderMain.module.css';
 
 export default function HeaderMain() {

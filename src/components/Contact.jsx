@@ -1,3 +1,4 @@
+import React from 'react';
 import Section from './UI/Section';
 import classes from './Contact.module.css';
 

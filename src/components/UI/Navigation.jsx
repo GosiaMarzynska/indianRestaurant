@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import classes from './Navigation.module.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import CartButton from '../../components/Cart/CartButton';
 
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import Button from '../components/UI/Button';
 import classes from './ReservationSection.module.css';

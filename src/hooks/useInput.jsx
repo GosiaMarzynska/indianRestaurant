@@ -29,7 +29,7 @@ export default function useInput(validateValue) {
 		dispatch({ type: 'INPUT', value: event.target.value });
 	};
 
-	const inputBlurHandler = event => {
+	const inputBlurHandler = () => {
 		dispatch({ type: 'BLUR' });
 	};
 

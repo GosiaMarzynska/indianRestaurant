@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import Category from './Category';
 import classes from './Menu.module.css';

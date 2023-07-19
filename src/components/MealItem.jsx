@@ -1,8 +1,9 @@
+import React from 'react';
 import MealDetails from './MealDetails';
 import classes from './MealItem.module.css';
 
 export default function MealItem(props) {
-const {name, imgSmall, price, description, id} = props;
+	const { name, imgSmall, price, description, id } = props;
 
 	return (
 		<div
@@ -15,7 +16,7 @@ const {name, imgSmall, price, description, id} = props;
 					<p className={classes.price}>{price} zł</p>
 				</div>
 			</div>
-			{props.isActive && <MealDetails  name={name} description={description} id={id} price={price} />}
+			{props.isActive && <MealDetails name={name} description={description} id={id} price={price} />}
 		</div>
 	);
 }
