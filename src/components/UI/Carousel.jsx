@@ -3,7 +3,7 @@ import useDesktopViewport from '../../hooks/useDesktopViewport';
 import classes from './Carousel.module.css';
 import Img1 from '../../assets/meals/meal1.jpg';
 import Img2 from '../../assets/meals/meal2.jpg';
-import Img2 from '../../assets/meals/meal3.jpg';
+import Img3 from '../../assets/meals/meal3.jpg';
 
 const sliderStyles = {
 	position: 'relative',
