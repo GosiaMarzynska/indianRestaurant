@@ -6,7 +6,9 @@
 	padding: 2em;
 	height: 60vh;
 	text-align: center;
-    background-image:linear-gradient(45deg, rgba(0, 0, 0, 0.543), rgba(0, 0, 0, 0.598)), url('src/assets/meals/indian-dishes-small.jpg');
+    background-image:linear-gradient(45deg, rgba(0, 0, 0, 0.543), rgba(0, 0, 0, 0.598)),
+	url(/public/assets/meals/indian-dishes-small.jpg);
+	
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
