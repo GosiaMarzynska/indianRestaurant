@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import Category from './Category';
 import classes from './Menu.module.css';
 import Section from '../components/UI/Section';
-import { MEALS } from '../../public/assets/meals';
+import { MEALS } from '../meals';
 
 const STARTERS = 'Starters';
 const CHICKEN = 'Chicken Dishes';
