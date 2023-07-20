@@ -1,9 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useDesktopViewport from '../../hooks/useDesktopViewport';
 import classes from './Carousel.module.css';
-import Img1 from '../../assets/meals/meal1.jpg';
-import Img2 from '../../assets/meals/meal2.jpg';
-import Img3 from '../../assets/meals/meal3.jpg';
 
 const sliderStyles = {
 	position: 'relative',
@@ -28,7 +25,7 @@ export default function Carousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const sliderWidth = width;
 
-	const slides = [Img1, Img2, Img3];
+	const slides = ['../../public/assets/meals/meal1.jpg', '../../public/assets/meals/meal2.jpg', '../../public/assets/meals/meal3.jpg'];
 
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;

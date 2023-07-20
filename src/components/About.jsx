@@ -6,7 +6,7 @@ export default function About() {
 		<section className={classes.about} id='about-us'>
 			<h2 className={classes.title}>O nas</h2>
 			<div className={classes.box}>
-				<img className={classes.img} src='src\assets\chef.jpg' alt='szef kuchni' />
+				<img className={classes.img} src='./public/assets/chef.jpg' alt='szef kuchni' />
 				<p className={classes.text}>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, obcaecati? Voluptas, nobis.Facere quae
 					eligendi non repellendus, maxime sit similique laborum quaerat corrupti nesciunt! Distinctio voluptas repellat
