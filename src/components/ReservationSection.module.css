@@ -2,7 +2,7 @@
 	position: relative;
 	padding: 7rem 3rem;
 	width: 100%;
-	background: url(/src/assets/background-pattern.png);
+	background: url(/assets/background-pattern.png);
 	text-align: center;
 	color: var(--color-main);
 }

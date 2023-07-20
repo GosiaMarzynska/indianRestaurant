@@ -1,6 +1,6 @@
 .footer {
 	position: relative;
-	background: url(/src/assets/background-pattern.png);
+	background: url(/assets/background-pattern.png);
 	color: var(--color-second);
 }
 .wrapper {

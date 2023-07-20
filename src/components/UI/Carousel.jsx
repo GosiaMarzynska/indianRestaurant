@@ -25,7 +25,7 @@ export default function Carousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const sliderWidth = width;
 
-	const slides = ['../../public/assets/meals/meal1.jpg', '../../public/assets/meals/meal2.jpg', '../../public/assets/meals/meal3.jpg'];
+	const slides = ['/assets/meals/meal1.jpg', '/assets/meals/meal2.jpg', '/assets/meals/meal3.jpg'];
 
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;

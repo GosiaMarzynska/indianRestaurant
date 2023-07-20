@@ -71,7 +71,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background: url(/src/assets/background-pattern.png);
+	background: url(/assets/background-pattern.png);
 	z-index: 100;
 	transform: translateX(-102%);
 	transition: transform 0.3s;

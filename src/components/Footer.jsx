@@ -12,7 +12,7 @@ export default function Footer() {
 					<div className={classes.box}>
 						<img
 							className={classes['box-logo']}
-							src='src\assets\logo\logo-namaste-text.png'
+							src='\assets\logo\logo-namaste-text.png'
 							alt='logo restauracji Namate'
 						/>
 						<p className={classes['box-text']}>

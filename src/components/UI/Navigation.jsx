@@ -57,7 +57,7 @@ export default function Navigation() {
 			<div
 				className={classes['nav-mobile']}
 				style={isActive ? { transform: 'translateX(0)' } : { transform: 'translateX(-102%)' }}>
-				<img className={classes.logo} src='src\assets\logo\logo-small.png' alt='logo restauracji' />
+				<img className={classes.logo} src='\assets\logo\logo-small.png' alt='logo restauracji' />
 				<Link to='/' className={classes['nav-link']} onClick={closeNavWindow}>
 					Home
 				</Link>
@@ -73,7 +73,7 @@ export default function Navigation() {
 			</div>
 
 			<div className={navBarClasses}>
-				<img className={classes['nav-logo']} src='src\assets\logo\logo-small.png' alt='logo restauracji' />
+				<img className={classes['nav-logo']} src='\assets\logo\logo-small.png' alt='logo restauracji' />
 				<Link to='/' className={classes['nav-item']}>
 					Home
 				</Link>

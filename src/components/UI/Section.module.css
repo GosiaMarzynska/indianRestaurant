@@ -3,7 +3,7 @@
 	padding: 7rem 0;
 	width: 100%;
 	min-height: 100vh;
-	background: url(/src/assets/background-pattern.png);
+	background: url(/assets/background-pattern.png);
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--color-main);
