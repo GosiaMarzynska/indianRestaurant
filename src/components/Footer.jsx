@@ -20,13 +20,13 @@ export default function Footer() {
 							soluta maiores facilis magni accusantium!
 						</p>
 						<div className={classes['box-social']}>
-							<a href='#' className={classes['box-link']}>
+							<a href='#' aria-label='twitter' className={classes['box-link']}>
 								<i className='fab fa-twitter-square'></i>
 							</a>
-							<a href='#' className={classes['box-link']}>
+							<a href='#' aria-label='facebook' className={classes['box-link']}>
 								<i className='fab fa-facebook-square'></i>
 							</a>
-							<a href='#' className={classes['box-link']}>
+							<a href='#' aria-label='instagram'className={classes['box-link']}>
 								<i className='fab fa-instagram'></i>
 							</a>
 						</div>

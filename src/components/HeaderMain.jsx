@@ -9,7 +9,7 @@ export default function HeaderMain() {
 			<p className={classes.phone}>
 				<i className='fa-solid fa-phone' alt='telefon do restauracji'></i> +48 737 167 040
 			</p>
-			<a className={classes.arrow} href='#about-us'>
+			<a className={classes.arrow} aria-label="Przejdź do sekcji o nas" href='#about-us'>
 				<i className='fa-sharp fa-solid fa-circle-chevron-down'></i>
 			</a>
 		</header>

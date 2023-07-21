@@ -11,12 +11,12 @@ const CartButton = () => {
 	};
 
 	return (
-		<button className={classes.button} onClick={toggleCartHandler}>
+		<button id='koszyk' aria-label='koszyk' className={classes.button} onClick={toggleCartHandler}>
 			<p className={classes.badge}>
 				<span className={classes.icon}>
 					<i className='fa-solid fa-cart-shopping'></i>
 				</span>
-			{totalQuantity > 0 ? <span className={classes.quantity}>{totalQuantity} </span> : null }
+				{totalQuantity > 0 ? <span className={classes.quantity}>{totalQuantity} </span> : null}
 			</p>
 		</button>
 	);

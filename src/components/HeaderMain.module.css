@@ -7,7 +7,7 @@
 
 .logo {
 	position: absolute;
-	width: 80%;
+	width: 75%;
 	left: 50%;
 	top: 40%;
 	transform: translate(-50%, -50%);
@@ -19,7 +19,7 @@
 }
 .phone {
 	position: absolute;
-	bottom: 120px;
+	bottom: 100px;
 	left: 50%;
 	transform: translateX(-50%);
 	text-shadow: 3px 3px 5px #111;
@@ -50,10 +50,9 @@
 
 @media (min-width: 576px) {
 	.logo {
-		width: 455px;
+		width: 425px;
 	}
 }
-
 
 @media (min-width: 768px) {
 
