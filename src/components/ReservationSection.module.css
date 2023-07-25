@@ -1,7 +1,6 @@
 .reservation {
 	position: relative;
 	padding: 7rem 3rem;
-	width: 100%;
 	background: url(/assets/background-pattern.png);
 	text-align: center;
 	color: var(--color-main);
@@ -40,10 +39,9 @@
 /* --------------- MEDIA ------------------------- */
 
 @media (min-width: 768px) {
-    
-    .reservation {
-        padding: 9rem 5rem;
-    }
+	.reservation {
+		padding: 9rem 5rem;
+	}
 
 	.title {
 		font-size: 3rem;
@@ -56,12 +54,10 @@
 	}
 }
 
-
 @media (min-width: 992px) {
-    
-    .reservation {
-        padding: 9rem 10rem;
-    }
+	.reservation {
+		padding: 9rem 10rem;
+	}
 
 	.title {
 		font-size: 3.2rem;
@@ -75,7 +71,7 @@
 }
 
 @media (min-width: 1200px) {
-	.reservation{
+	.reservation {
 		padding: 9rem 15%;
 	}
 }
