@@ -1,4 +1,5 @@
-# Namaste Indian Restaurant ![logo](public/assets/logo/lotus-small.png)
+# Namaste Indian Restaurant 
+![logo](public/assets/logo/lotus-small.png)
 ## Try me
 #### [namaste-restaurant.netlify.app](namaste-restaurant.netlify.app)
 
