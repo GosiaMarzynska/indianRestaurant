@@ -1,4 +1,4 @@
-# Namaste Indian Restaurant ![](/assets/logo/logo-small.png)
+# Namaste Indian Restaurant ![logo](/assets/logo/logo-small.png)
 ## Try me
 #### [namaste-restaurant.netlify.app](namaste-restaurant.netlify.app)
 
@@ -31,7 +31,7 @@ Quiz Game requires ViteJS to run;
 ### Mobile
  ![1.](docs/mobile-start.png)
  ![2.](docs/mobile-about.png)
- ![3.](docs/mobile-start.png)
+ ![3.](docs/mobile-reservation.png)
  ![4.](docs/mobile-cart.png)
  ![5.](docs/mobile-nav.png)
  ![6.](docs/mobile-menu2.png)
@@ -41,7 +41,7 @@ Quiz Game requires ViteJS to run;
 ![1.](docs/desktop-main.png)
 ![2.](docs/desktop-menu-section.png)
 ![3.](docs/desktop-menu.png)
-![4.](docs/desktop-main.png)
+![4.](docs/desktop-modal.png)
 
 ## License
 MIT
