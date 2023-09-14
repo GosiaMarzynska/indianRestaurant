@@ -1,7 +1,7 @@
 # Namaste Indian Restaurant 
 
 ## Try me
-#### [namaste-restaurant.netlify.app](namaste-restaurant.netlify.app)
+#### [namaste-restaurant.netlify.app](http://namaste-restaurant.netlify.app)
 
 ## About
 It's a food order App for an imaginary indian restaurant. This Single Page aplication allows you to order your favourite indian-meals and send your order to fire-base database.The site was created with a “mobile-first” approach but it has also desktop version. 
